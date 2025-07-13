@@ -247,9 +247,9 @@
 .text-gradient-primary {
   background-image: linear-gradient(to right, var(--primary), var(--accent));
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent !important; /* Added !important */
   background-clip: text;
-  color: transparent; /* Fallback for non-webkit browsers */
+  color: transparent !important; /* Added !important */
 }
 
 /* New styles for gradient border wrapper */
