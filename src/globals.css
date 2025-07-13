@@ -90,7 +90,7 @@
 
   body {
     @apply bg-background text-foreground;
-    cursor: none; /* Hide default cursor */
+    /* Removed: cursor: none; */
   }
 }
 
@@ -244,28 +244,29 @@
   transform: rotate(-2deg) scale(1.05);
 }
 
-/* Custom Cursor Styles */
+/* Removed Custom Cursor Styles */
+/*
 .custom-cursor-outer {
-  width: 20px; /* Adjusted size */
-  height: 20px; /* Adjusted size */
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  /* Creates a gradient ring with transparent center */
   background: radial-gradient(circle at center,
     transparent 0%,
-    transparent 60%, /* Inner transparent area */
-    hsl(var(--primary)) 60%, /* Start of gradient ring */
-    hsl(var(--accent)) 80%, /* End of gradient ring */
-    transparent 80% /* Outer transparent area */
+    transparent 60%,
+    hsl(var(--primary)) 60%,
+    hsl(var(--accent)) 80%,
+    transparent 80%
   );
-  filter: blur(0.5px); /* Add a slight blur for softness */
+  filter: blur(0.5px);
 }
 
 .custom-cursor-inner {
-  width: 6px; /* Adjusted size */
-  height: 6px; /* Adjusted size */
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background-color: hsl(var(--primary)); /* Use primary color for the dot */
+  background-color: hsl(var(--primary));
 }
+*/
 
 /* Font import for Inter */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
