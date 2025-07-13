@@ -219,3 +219,33 @@
   background-clip: text;
   color: transparent; /* Fallback for non-webkit browsers */
 }
+
+/* New styles for gradient border wrapper */
+.gradient-border-wrapper {
+  position: relative;
+}
+
+.gradient-border-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  bottom: 15px;
+  left: 15px;
+  background: linear-gradient(135deg, var(--accent), var(--primary)); /* Using defined CSS variables */
+  z-index: 1;
+  border-radius: 1.25rem;
+  transform: rotate(-5deg);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gradient-border-wrapper:hover::before {
+  transform: rotate(-2deg) scale(1.05);
+}
+
+/* Font import for Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
