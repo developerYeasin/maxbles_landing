@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from 'lucide-react';
+import { Menu, ChevronDown } from 'lucide-react'; // Import ChevronDown
 import { Link } from 'react-router-dom';
 import {
   DropdownMenu,
@@ -24,7 +24,7 @@ const Header = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-200">
-                Pages <Menu className="ml-1 h-4 w-4" />
+                Pages <ChevronDown className="ml-1 h-4 w-4" /> {/* Changed icon to ChevronDown */}
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-48 bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700">
                 <DropdownMenuItem asChild>
@@ -44,7 +44,7 @@ const Header = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-300">
-                Portfolio <Menu className="ml-1 h-4 w-4" />
+                Portfolio <ChevronDown className="ml-1 h-4 w-4" /> {/* Changed icon to ChevronDown */}
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-48 bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700">
                 <DropdownMenuItem asChild>
