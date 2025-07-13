@@ -61,7 +61,7 @@ const BlogPage = () => {
       <Header />
       <main className="flex-grow container mx-auto px-4 py-20">
         <section className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-primary dark:text-primary-foreground mb-6 animate-fade-in-up">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-gradient-primary mb-6 animate-fade-in-up">
             Insights from the Maxbles Blog
           </h1>
           <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">

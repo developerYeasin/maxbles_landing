@@ -2,8 +2,9 @@ import React from 'react';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
-import { Input } from "@/components/ui/input"; // Confirmed this import is present
-import { Button } from "@/components/ui/button"; // Confirmed this import is present
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import GradientButton from './GradientButton'; // Import GradientButton
 
 const Footer = () => {
   return (
@@ -52,7 +53,7 @@ const Footer = () => {
           <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">Stay updated with our latest news and offers.</p>
           <form className="flex flex-col gap-2">
             <Input type="email" placeholder="Your email" className="bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-800 dark:text-white" />
-            <Button type="submit" className="bg-primary hover:bg-primary/90 text-primary-foreground">Subscribe</Button>
+            <GradientButton type="submit" className="w-full">Subscribe</GradientButton>
           </form>
         </div>
       </div>

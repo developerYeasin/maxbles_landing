@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, ChevronDown } from 'lucide-react'; // Import ChevronDown
+import { Menu, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import {
   DropdownMenu,
@@ -13,18 +13,22 @@ import {
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md supports-[backdrop-filter]:bg-white/60 dark:border-gray-800 dark:bg-gray-950/80 dark:supports-[backdrop-filter]:bg-gray-950/60">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md supports-[backdrop-filter]:bg-white/60 dark:border-gray-800 dark:bg-gray-950/80 dark:supports-[backdrop-filter]:bg-gray-950/60 shadow-sm">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="mr-6 flex items-center space-x-2 animate-slide-in-left">
-            <img src="https://maxblesdigital.com/wp-content/uploads/2025/07/maxbles-final-color-1-1536x354.png" alt="Maxbles Logo" className="h-8 w-auto" />
+            <img src="https://maxblesdigital.com/wp-content/uploads/2025/07/maxbles-final-color-1-1536x354.png" alt="Maxbles Logo" className="h-9 w-auto" /> {/* Slightly larger logo */}
           </Link>
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-600 dark:text-gray-300">
-            <Link to="/" className="transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-100">Home</Link>
+            <Link to="/" className="relative group transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-100">
+              Home
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+            </Link>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-200">
-                Pages <ChevronDown className="ml-1 h-4 w-4" /> {/* Changed icon to ChevronDown */}
+              <DropdownMenuTrigger className="flex items-center relative group transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-200">
+                Pages <ChevronDown className="ml-1 h-4 w-4" />
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-48 bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700">
                 <DropdownMenuItem asChild>
@@ -43,22 +47,21 @@ const Header = () => {
             </DropdownMenu>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-300">
-                Portfolio <ChevronDown className="ml-1 h-4 w-4" /> {/* Changed icon to ChevronDown */}
+              <DropdownMenuTrigger className="flex items-center relative group transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-300">
+                Portfolio <ChevronDown className="ml-1 h-4 w-4" />
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-48 bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700">
                 <DropdownMenuItem asChild>
                   <Link to="/portfolio" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">All Projects</Link>
                 </DropdownMenuItem>
-                {/* Add more portfolio categories here if needed */}
-                {/* <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <Link to="/portfolio/web-design" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Web Design</Link>
-                </DropdownMenuItem> */}
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link to="/contact" className="transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-400">Contact</Link>
+            <Link to="/contact" className="relative group transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-400">
+              Contact
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+            </Link>
           </nav>
         </div>
         <div className="md:hidden animate-slide-in-right">

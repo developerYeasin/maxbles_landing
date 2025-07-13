@@ -9,6 +9,7 @@ import ServicesSection from '@/components/ServicesSection';
 import PortfolioSection from '@/components/PortfolioSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import BlogSection from '@/components/BlogSection';
+import GradientButton from '@/components/GradientButton'; // Import GradientButton
 
 const Index = () => {
   return (
@@ -26,9 +27,9 @@ const Index = () => {
             </p>
             <div className="flex justify-center space-x-4 animate-fade-in-up delay-300">
               <Link to="/services">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6 rounded-full shadow-lg transform transition-transform hover:scale-105">
+                <GradientButton size="lg" className="text-lg px-8 py-6 rounded-full shadow-lg">
                   Explore Services
-                </Button>
+                </GradientButton>
               </Link>
               <Link to="/contact">
                 <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 dark:border-primary-foreground dark:text-primary-foreground dark:hover:bg-primary-foreground/10 text-lg px-8 py-6 rounded-full shadow-lg transform transition-transform hover:scale-105">

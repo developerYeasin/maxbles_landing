@@ -7,6 +7,7 @@ import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'luc
 import { toast } from "@/components/ui/use-toast";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import GradientButton from '@/components/GradientButton'; // Import GradientButton
 
 const ContactPage = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -26,7 +27,7 @@ const ContactPage = () => {
       <Header />
       <main className="flex-grow container mx-auto px-4 py-20">
         <section className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-primary dark:text-primary-foreground mb-6 animate-fade-in-up">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-gradient-primary mb-6 animate-fade-in-up">
             Let's Connect
           </h1>
           <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">
@@ -36,7 +37,7 @@ const ContactPage = () => {
 
         <div className="grid md:grid-cols-2 gap-12">
           <div className="animate-slide-in-left delay-300">
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">Contact Information</h2>
+            <h2 className="text-3xl font-bold text-gradient-primary mb-6">Contact Information</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
               Our team is available to answer your questions and provide support. Feel free to reach us through any of the following channels:
             </p>
@@ -86,7 +87,7 @@ const ContactPage = () => {
                 <Label htmlFor="message" className="text-gray-800 dark:text-white text-base">Message</Label>
                 <Textarea id="message" placeholder="Your Message" rows={6} required className="mt-2 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:border-primary focus:ring-primary" />
               </div>
-              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-lg py-3 rounded-md shadow-md transition-colors">Send Message</Button>
+              <GradientButton type="submit" className="w-full">Send Message</GradientButton>
             </form>
           </div>
         </div>

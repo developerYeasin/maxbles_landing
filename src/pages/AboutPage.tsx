@@ -10,7 +10,7 @@ const AboutPage = () => {
       <Header />
       <main className="flex-grow container mx-auto px-4 py-20">
         <section className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-primary dark:text-primary-foreground mb-6 animate-fade-in-up">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-gradient-primary mb-6 animate-fade-in-up">
             About Maxbles: Innovating Digital Futures
           </h1>
           <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">
@@ -20,7 +20,7 @@ const AboutPage = () => {
 
         <section className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div className="animate-slide-in-left delay-300">
-            <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-6">Our Story & Philosophy</h2>
+            <h2 className="text-4xl font-bold text-gradient-primary mb-6">Our Story & Philosophy</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
               Founded on the principle of delivering measurable results through creative solutions, Maxbles began with a small team of dedicated professionals. Over the years, we've grown into a full-service agency, but our core philosophy remains the same: **client success is our success.** We believe in transparent communication, collaborative partnerships, and a relentless pursuit of perfection in every project.
             </p>
@@ -68,7 +68,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="text-center py-16 bg-primary/10 dark:bg-primary/20 rounded-lg shadow-inner animate-fade-in-up delay-800">
+        <section className="text-center py-16 mt-20 bg-primary/10 dark:bg-primary/20 rounded-lg shadow-inner animate-fade-in-up delay-800">
           <h2 className="text-4xl font-bold text-primary dark:text-primary-foreground mb-6">Our Global Reach</h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-8">
             Maxbles serves clients worldwide, bringing digital excellence to businesses across diverse industries and geographies.

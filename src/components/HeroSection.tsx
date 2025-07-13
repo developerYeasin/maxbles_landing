@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
-import GradientBadge from './GradientBadge'; // Import the new GradientBadge component
+import GradientBadge from './GradientBadge';
+import GradientButton from './GradientButton'; // Import the new GradientButton
 
 const HeroSection = () => {
   return (
@@ -22,9 +22,9 @@ const HeroSection = () => {
           Your vision, our expertise. We bring innovative ideas to life with stunning design and robust development. We are a team of passionate creators dedicated to turning complex challenges into beautiful, user-friendly solutions. From concept to launch, we ensure every detail is perfect.
         </p>
         <Link to="/portfolio">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6 rounded-full shadow-lg transform transition-transform hover:scale-105 animate-fade-in-up delay-400">
+          <GradientButton size="lg" className="text-lg px-8 py-6 rounded-full shadow-lg animate-fade-in-up delay-400">
             Discover Our Work
-          </Button>
+          </GradientButton>
         </Link>
       </div>
     </section>
