@@ -1,16 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GradientBadge from './GradientBadge';
-import GradientButton from './GradientButton'; // Import the new GradientButton
+import GradientButton from './GradientButton'; // Ensure GradientButton is imported and used
 
 const HeroSection = () => {
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center text-center bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950 text-gray-800 dark:text-white overflow-hidden">
-      {/* Subtle background pattern to mimic particle effect without a library */}
-      <div className="absolute inset-0 z-0 opacity-10" style={{
-        backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(0,0,0,0.05) 1px, transparent 1px), radial-gradient(circle at 75% 75%, rgba(0,0,0,0.05) 1px, transparent 1px)',
-        backgroundSize: '30px 30px',
-      }}></div>
+      {/* Removed subtle background pattern for a cleaner look as per user's image */}
       <div className="relative z-10 p-4 max-w-4xl mx-auto">
         <div className="mb-4 animate-fade-in-up">
           <GradientBadge>Digital Consulting Agency</GradientBadge>
