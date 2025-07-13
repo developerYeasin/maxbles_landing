@@ -3,6 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   return (
@@ -14,12 +21,44 @@ const Header = () => {
           </Link>
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-600 dark:text-gray-300">
             <Link to="/" className="transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-100">Home</Link>
-            <Link to="/about" className="transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-200">About</Link>
-            <Link to="/services" className="transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-300">Services</Link>
-            <Link to="/portfolio" className="transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-400">Portfolio</Link>
-            <Link to="/testimonials" className="transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-500">Testimonials</Link>
-            <Link to="/blog" className="transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-600">Blog</Link>
-            <Link to="/contact" className="transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-700">Contact</Link>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-200">
+                Pages <Menu className="ml-1 h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-48 bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700">
+                <DropdownMenuItem asChild>
+                  <Link to="/about" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">About Us</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/services" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Our Services</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/testimonials" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Testimonials</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/blog" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Blog</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-300">
+                Portfolio <Menu className="ml-1 h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-48 bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700">
+                <DropdownMenuItem asChild>
+                  <Link to="/portfolio" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">All Projects</Link>
+                </DropdownMenuItem>
+                {/* Add more portfolio categories here if needed */}
+                {/* <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link to="/portfolio/web-design" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Web Design</Link>
+                </DropdownMenuItem> */}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <Link to="/contact" className="transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-400">Contact</Link>
           </nav>
         </div>
         <div className="md:hidden animate-slide-in-right">
