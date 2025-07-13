@@ -1,53 +1,59 @@
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 
+const newImages = [
+  "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg",
+  "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2020/08/3-10.jpg",
+  "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/08/2-10.jpg",
+];
+
 const portfolioItems = [
   {
     title: "E-commerce Redesign",
     category: "Web Design",
-    image: "https://via.placeholder.com/400x300/6A5ACD/FFFFFF?text=Project+1", // SlateBlue
+    image: newImages[0],
     description: "A complete overhaul of an existing e-commerce platform, focusing on user experience and conversion rates. Implemented modern UI/UX principles and a responsive design for all devices."
   },
   {
     title: "Mobile App Development",
     category: "App Development",
-    image: "https://via.placeholder.com/400x300/FF6347/FFFFFF?text=Project+2", // Tomato
+    image: newImages[1],
     description: "Developed a cross-platform mobile application for a fitness brand, featuring personalized workout plans and progress tracking. Built with React Native for seamless iOS and Android experience."
   },
   {
     title: "Brand Identity Creation",
     category: "Branding",
-    image: "https://via.placeholder.com/400x300/3CB371/FFFFFF?text=Project+3", // MediumSeaGreen
+    image: newImages[2],
     description: "Crafted a comprehensive brand identity for a new tech startup, including logo design, typography, color palette, and brand guidelines. Established a strong visual presence from the ground up."
   },
   {
     title: "SaaS Platform UI",
     category: "UI/UX",
-    image: "https://via.placeholder.com/400x300/FFD700/FFFFFF?text=Project+4", // Gold
+    image: newImages[0],
     description: "Designed an intuitive and efficient user interface for a complex SaaS analytics platform. Focused on data visualization and streamlined workflows to enhance user productivity."
   },
   {
     title: "Marketing Campaign",
     category: "Digital Marketing",
-    image: "https://via.placeholder.com/400x300/DA70D6/FFFFFF?text=Project+5", // Orchid
+    image: newImages[1],
     description: "Executed a multi-channel digital marketing campaign that resulted in a 40% increase in lead generation. Utilized SEO, SEM, and social media strategies for maximum impact."
   },
   {
     title: "Corporate Website",
     category: "Web Development",
-    image: "https://via.placeholder.com/400x300/4682B4/FFFFFF?text=Project+6", // SteelBlue
+    image: newImages[2],
     description: "Developed a modern, secure, and scalable corporate website for a large enterprise. Integrated various third-party services and ensured compliance with accessibility standards."
   },
   {
     title: "Custom CRM System",
     category: "Software Development",
-    image: "https://via.placeholder.com/400x300/8FBC8F/FFFFFF?text=Project+7", // DarkSeaGreen
+    image: newImages[0],
     description: "Built a bespoke CRM system to manage client relationships and sales pipelines, significantly improving operational efficiency and data management for our client."
   },
   {
     title: "Interactive Kiosk Design",
     category: "UI/UX",
-    image: "https://via.placeholder.com/400x300/FFA07A/FFFFFF?text=Project+8", // LightSalmon
+    image: newImages[1],
     description: "Designed and developed an interactive kiosk interface for a retail environment, providing customers with product information and self-service options."
   },
 ];

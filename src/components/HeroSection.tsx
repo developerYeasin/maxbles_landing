@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import GradientButton from './GradientButton';
 
 const HeroSection = () => {
-  const imageUrl = "https://images.pexels.com/photos/7578864/pexels-photo-7578864.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+  const imageUrl = "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg"; // Using the first new image
   
   // Ref for the image wrapper to apply parallax effect
   const imageWrapperRef = useRef<HTMLDivElement>(null);

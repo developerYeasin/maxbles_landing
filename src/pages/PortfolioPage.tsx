@@ -3,60 +3,66 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
+const newImages = [
+  "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg",
+  "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2020/08/3-10.jpg",
+  "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/08/2-10.jpg",
+];
+
 const portfolioItems = [
   {
     title: "E-commerce Redesign: LuxeBoutique",
     category: "Web Design",
-    image: "https://via.placeholder.com/600x450/6A5ACD/FFFFFF?text=LuxeBoutique", // SlateBlue
+    image: newImages[0],
     description: "A complete overhaul of an existing e-commerce platform, focusing on user experience and conversion rates. Implemented modern UI/UX principles and a responsive design for all devices, resulting in a 30% increase in sales.",
     tags: ["Shopify", "UI/UX", "Responsive Design", "Conversion Optimization"]
   },
   {
     title: "Mobile App: FitLife Tracker",
     category: "App Development",
-    image: "https://via.placeholder.com/600x450/FF6347/FFFFFF?text=FitLife+Tracker", // Tomato
+    image: newImages[1],
     description: "Developed a cross-platform mobile application for a fitness brand, featuring personalized workout plans, progress tracking, and social sharing. Built with React Native for seamless iOS and Android experience, achieving 100k+ downloads.",
     tags: ["React Native", "iOS", "Android", "Fitness Tech", "API Integration"]
   },
   {
     title: "Brand Identity: Quantum Innovations",
     category: "Branding",
-    image: "https://via.placeholder.com/600x450/3CB371/FFFFFF?text=Quantum+Innovations", // MediumSeaGreen
+    image: newImages[2],
     description: "Crafted a comprehensive brand identity for a new tech startup, including logo design, typography, color palette, and brand guidelines. Established a strong visual presence from the ground up, aiding in successful seed funding.",
     tags: ["Logo Design", "Brand Guidelines", "Visual Identity", "Startup Branding"]
   },
   {
     title: "SaaS Platform UI: DataFlow Analytics",
     category: "UI/UX",
-    image: "https://via.placeholder.com/600x450/FFD700/FFFFFF?text=DataFlow+Analytics", // Gold
+    image: newImages[0],
     description: "Designed an intuitive and efficient user interface for a complex SaaS analytics platform. Focused on data visualization and streamlined workflows to enhance user productivity and reduce learning curve by 25%.",
     tags: ["SaaS UI", "Data Visualization", "Dashboard Design", "User Research"]
   },
   {
     title: "Marketing Campaign: EcoGrow Launch",
     category: "Digital Marketing",
-    image: "https://via.placeholder.com/600x450/DA70D6/FFFFFF?text=EcoGrow+Launch", // Orchid
+    image: newImages[1],
     description: "Executed a multi-channel digital marketing campaign that resulted in a 40% increase in lead generation and 20% higher engagement rates. Utilized SEO, SEM, and social media strategies for maximum impact.",
     tags: ["SEO", "SEM", "Social Media Marketing", "Lead Generation", "Content Marketing"]
   },
   {
     title: "Corporate Website: GlobalConnect",
     category: "Web Development",
-    image: "https://via.placeholder.com/600x450/4682B4/FFFFFF?text=GlobalConnect", // SteelBlue
+    image: newImages[2],
     description: "Developed a modern, secure, and scalable corporate website for a large enterprise. Integrated various third-party services and ensured compliance with accessibility standards, improving corporate communication.",
     tags: ["Enterprise Web", "CMS Integration", "Accessibility", "Security"]
   },
   {
     title: "Custom CRM System: ClientHub",
     category: "Software Development",
-    image: "https://via.placeholder.com/600x450/8FBC8F/FFFFFF?text=ClientHub", // DarkSeaGreen
+    image: newImages[0],
     description: "Built a bespoke CRM system to manage client relationships and sales pipelines, significantly improving operational efficiency and data management for our client. Reduced manual data entry by 50%.",
     tags: ["Custom Software", "CRM", "Automation", "Business Process Optimization"]
   },
   {
     title: "Interactive Kiosk: Retail Experience",
     category: "UI/UX",
-    image: "https://via.placeholder.com/600x450/FFA07A/FFFFFF?text=Retail+Kiosk", // LightSalmon
+    image: newImages[1],
     description: "Designed and developed an interactive kiosk interface for a retail environment, providing customers with product information, self-service options, and loyalty program sign-ups. Enhanced in-store engagement.",
     tags: ["Interactive Design", "Retail Tech", "Touchscreen UI", "Customer Engagement"]
   },
