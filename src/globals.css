@@ -246,23 +246,23 @@
 
 /* Custom Cursor Styles */
 .custom-cursor-outer {
-  width: 24px; /* w-6 */
-  height: 24px; /* h-6 */
+  width: 20px; /* Adjusted size */
+  height: 20px; /* Adjusted size */
   border-radius: 50%;
   /* Creates a gradient ring with transparent center */
   background: radial-gradient(circle at center,
     transparent 0%,
-    transparent 35%, /* Inner transparent area */
-    hsl(var(--primary)) 35%, /* Start of gradient */
-    hsl(var(--accent)) 65%, /* End of gradient */
-    transparent 65% /* Outer transparent area */
+    transparent 60%, /* Inner transparent area */
+    hsl(var(--primary)) 60%, /* Start of gradient ring */
+    hsl(var(--accent)) 80%, /* End of gradient ring */
+    transparent 80% /* Outer transparent area */
   );
   filter: blur(0.5px); /* Add a slight blur for softness */
 }
 
 .custom-cursor-inner {
-  width: 8px; /* w-2 */
-  height: 8px; /* h-2 */
+  width: 6px; /* Adjusted size */
+  height: 6px; /* Adjusted size */
   border-radius: 50%;
   background-color: hsl(var(--primary)); /* Use primary color for the dot */
 }
