@@ -90,6 +90,7 @@
 
   body {
     @apply bg-background text-foreground;
+    cursor: url('/cursors/custom-cursor.png') 12 12, auto; /* 12 12 sets the hotspot to the center of the 24x24 image */
   }
 }
 
