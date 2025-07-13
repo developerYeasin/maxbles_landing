@@ -17,7 +17,7 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="mr-6 flex items-center space-x-2 animate-slide-in-left">
-            <img src="https://maxblesdigital.com/wp-content/uploads/2025/07/maxbles-final-color-1-1536x354.png" alt="Maxbles Logo" className="h-9 w-auto" /> {/* Slightly larger logo */}
+            <img src="https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/08/1-12.jpg" alt="Maxbles Logo" className="h-9 w-auto" /> {/* Slightly larger logo */}
           </Link>
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-600 dark:text-gray-300">
             <Link to="/" className="relative group transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-100">
