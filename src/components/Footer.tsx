@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-gray-900 dark:bg-gray-950 text-white py-8">
       <div className="container mx-auto px-4 text-center">
         <div className="mb-4 animate-fade-in-up">
-          <img src="/src/assets/maxbles-logo.png" alt="Maxbles Logo" className="h-10 w-auto mx-auto mb-4" />
+          <img src="https://maxblesdigital.com/wp-content/uploads/2025/07/maxbles-final-color-1-1536x354.png" alt="Maxbles Logo" className="h-10 w-auto mx-auto mb-4" />
           <p className="text-gray-400">Crafting digital experiences that inspire and convert.</p>
         </div>
         <div className="flex justify-center space-x-6 mb-4 text-gray-300 animate-fade-in-up delay-100">
