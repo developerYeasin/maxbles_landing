@@ -9,7 +9,8 @@ import ServicesSection from '@/components/ServicesSection';
 import PortfolioSection from '@/components/PortfolioSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import BlogSection from '@/components/BlogSection';
-import GradientButton from '@/components/GradientButton'; // Import GradientButton
+import GradientButton from '@/components/GradientButton';
+import MarqueeSection from '@/components/MarqueeSection'; // Import MarqueeSection
 
 const Index = () => {
   return (
@@ -39,6 +40,7 @@ const Index = () => {
             </div>
           </div>
         </section>
+        <MarqueeSection /> {/* Added the MarqueeSection here */}
         <AboutSection />
         <ServicesSection />
         <PortfolioSection />

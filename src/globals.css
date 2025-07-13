@@ -172,6 +172,16 @@
   }
 }
 
+/* Marquee animation */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* Scrolls half the content width to loop seamlessly */
+  }
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out forwards;
 }
@@ -199,6 +209,11 @@
 .animate-rotate-in {
   animation: rotate-in 0.8s ease-out forwards;
 }
+
+.animate-marquee {
+  animation: marquee 30s linear infinite; /* Adjust duration as needed */
+}
+
 
 /* Delay utilities for animations */
 .delay-100 { animation-delay: 0.1s; }
