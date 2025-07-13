@@ -1,17 +1,21 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
+import GradientBadge from './GradientBadge'; // Import the new GradientBadge component
 
 const HeroSection = () => {
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center text-center bg-gradient-to-br from-primary/10 to-accent/10 dark:from-gray-900 dark:to-gray-950 text-gray-800 dark:text-white overflow-hidden">
+    <section id="hero" className="relative h-screen flex items-center justify-center text-center bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950 text-gray-800 dark:text-white overflow-hidden">
       {/* Subtle background pattern to mimic particle effect without a library */}
       <div className="absolute inset-0 z-0 opacity-10" style={{
         backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(0,0,0,0.05) 1px, transparent 1px), radial-gradient(circle at 75% 75%, rgba(0,0,0,0.05) 1px, transparent 1px)',
         backgroundSize: '30px 30px',
       }}></div>
       <div className="relative z-10 p-4 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-primary dark:text-primary-foreground animate-fade-in-up">
+        <div className="mb-4 animate-fade-in-up">
+          <GradientBadge>Digital Consulting Agency</GradientBadge>
+        </div>
+        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-gradient-primary animate-fade-in-up delay-100">
           Maxbles: Crafting Digital Experiences
         </h1>
         <p className="text-lg md:text-xl mb-8 text-gray-700 dark:text-gray-300 animate-fade-in-up delay-200">

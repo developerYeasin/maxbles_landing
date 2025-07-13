@@ -4,6 +4,11 @@ import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import AboutSection from '@/components/AboutSection';
+import ServicesSection from '@/components/ServicesSection';
+import PortfolioSection from '@/components/PortfolioSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import BlogSection from '@/components/BlogSection';
 
 const Index = () => {
   return (
@@ -33,6 +38,11 @@ const Index = () => {
             </div>
           </div>
         </section>
+        <AboutSection />
+        <ServicesSection />
+        <PortfolioSection />
+        <TestimonialsSection />
+        <BlogSection />
       </main>
       <Footer />
     </div>
