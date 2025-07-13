@@ -2,6 +2,8 @@ import React from 'react';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Input } from "@/components/ui/input"; // Added this import
+import { Button } from "@/components/ui/button"; // Ensure Button is also imported
 
 const Footer = () => {
   return (
