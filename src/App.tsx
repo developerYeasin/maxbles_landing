@@ -11,6 +11,7 @@ import PortfolioPage from "./pages/PortfolioPage";
 import TestimonialsPage from "./pages/TestimonialsPage";
 import BlogPage from "./pages/BlogPage";
 import ContactPage from "./pages/ContactPage";
+import CustomCursor from "@/components/CustomCursor"; // Import CustomCursor
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <CustomCursor /> {/* Render CustomCursor here */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
