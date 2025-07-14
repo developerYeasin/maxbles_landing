@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils.js";
 
 const newImages = [
   "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg",
@@ -58,9 +59,9 @@ const portfolioItems = [
   },
 ];
 
-const PortfolioSection = () => {
+const PortfolioSection = ({ className }) => {
   return (
-    <section id="portfolio" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="portfolio" className={cn("py-20 bg-gray-50 dark:bg-gray-900", className)}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">Our Portfolio</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

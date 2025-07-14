@@ -1,10 +1,11 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Lightbulb, Users, Rocket } from 'lucide-react';
+import { cn } from "@/lib/utils.js";
 
-const AboutSection = () => {
+const AboutSection = ({ className }) => {
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-800">
+    <section id="about" className={cn("py-20 bg-white dark:bg-gray-800", className)}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">About Maxbles</h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">

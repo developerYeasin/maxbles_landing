@@ -18,7 +18,7 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <HeroSection />
-        <section className="py-20 bg-white dark:bg-gray-800 text-center">
+        <section className="py-20 bg-white dark:bg-gray-800 text-center animate-pulse-subtle">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-6 animate-fade-in-up">
               Your Vision, Our Digital Expertise
@@ -40,12 +40,13 @@ const Index = () => {
             </div>
           </div>
         </section>
-        <MarqueeSection /> {/* Added the MarqueeSection here */}
-        <AboutSection />
-        <ServicesSection />
-        <PortfolioSection />
-        <TestimonialsSection />
-        <BlogSection />
+        <MarqueeSection /> {/* First MarqueeSection */}
+        <AboutSection className="animate-pulse-subtle" />
+        <ServicesSection className="animate-pulse-subtle" />
+        <MarqueeSection /> {/* Second MarqueeSection */}
+        <PortfolioSection className="animate-pulse-subtle" />
+        <TestimonialsSection className="animate-pulse-subtle" />
+        <BlogSection className="animate-pulse-subtle" />
       </main>
       <Footer />
     </div>

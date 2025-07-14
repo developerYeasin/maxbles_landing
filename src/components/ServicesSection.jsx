@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, Palette, Megaphone, Search, Layout, TrendingUp, ShieldCheck, Cloud } from 'lucide-react';
+import { cn } from "@/lib/utils.js";
 
 const services = [
   {
@@ -45,9 +46,9 @@ const services = [
   },
 ];
 
-const ServicesSection = () => {
+const ServicesSection = ({ className }) => {
   return (
-    <section id="services" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="services" className={cn("py-20 bg-gray-50 dark:bg-gray-900", className)}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up animate-pulse-subtle">Our Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

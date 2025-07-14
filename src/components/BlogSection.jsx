@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils.js";
 
 const newImages = [
   "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg",
@@ -47,9 +48,9 @@ const blogPosts = [
   },
 ];
 
-const BlogSection = () => {
+const BlogSection = ({ className }) => {
   return (
-    <section id="blog" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="blog" className={cn("py-20 bg-gray-50 dark:bg-gray-900", className)}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">Latest from Our Blog</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
