@@ -2,12 +2,18 @@ import React from 'react';
 import { cn } from "@/lib/utils.js";
 
 const logos = [
-  "https://maxblesdigital.com/wp-content/uploads/2025/07/client-logo-1.png",
-  "https://maxblesdigital.com/wp-content/uploads/2025/07/client-logo-2.png",
-  "https://maxblesdigital.com/wp-content/uploads/2025/07/client-logo-3.png",
-  "https://maxblesdigital.com/wp-content/uploads/2025/07/client-logo-4.png",
-  "https://maxblesdigital.com/wp-content/uploads/2025/07/client-logo-5.png",
-  "https://maxblesdigital.com/wp-content/uploads/2025/07/client-logo-6.png",
+  "https://www.zatiqeasy.com/assets/shops/tofa.svg",
+  "https://www.zatiqeasy.com/assets/shops/pearl-house.svg",
+  "https://www.zatiqeasy.com/assets/partner/pathao.svg",
+  "https://www.zatiqeasy.com/assets/partner/redx.svg",
+  "https://www.zatiqeasy.com/assets/partner/stripe.svg",
+  "https://www.zatiqeasy.com/assets/partner/nagad.svg",
+  "https://www.zatiqeasy.com/assets/partner/upay.svg",
+  "https://www.zatiqeasy.com/assets/partner/bKash.svg",
+  "https://www.zatiqeasy.com/assets/partner/steadfast.svg",
+  "https://www.zatiqeasy.com/assets/partner/rx-courier.svg",
+  "https://www.zatiqeasy.com/assets/partner/ssl-commerz.svg",
+  "https://www.zatiqeasy.com/assets/partner/paperfly.svg",
 ];
 
 const MarqueeSection = ({ className }) => {
