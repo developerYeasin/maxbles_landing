@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-accordion": "^1.2.0",
@@ -63,5 +64,11 @@
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.11",
     "vite": "^6.3.4"
+  },
+  "scripts": {
+    "dev": "vite --port 32100",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   }
 }
