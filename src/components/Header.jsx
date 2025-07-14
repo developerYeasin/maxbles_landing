@@ -102,6 +102,28 @@ const Header = () => {
                 <Link to="/testimonials" className="hover:text-primary dark:hover:text-primary-foreground">Testimonials</Link>
                 <Link to="/blog" className="hover:text-primary dark:hover:text-primary-foreground">Blog</Link>
                 <Link to="/contact" className="hover:text-primary dark:hover:text-primary-foreground">Contact</Link>
+                {/* Social icons and Get in Touch button for mobile */}
+                <div className="flex justify-center space-x-6 mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
+                  <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
+                    <Facebook className="h-7 w-7" />
+                  </a>
+                  <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
+                    <Twitter className="h-7 w-7" />
+                  </a>
+                  <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
+                    <Linkedin className="h-7 w-7" />
+                  </a>
+                  <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
+                    <Instagram className="h-7 w-7" />
+                  </a>
+                </div>
+                <div className="mt-6">
+                  <Link to="/contact">
+                    <GradientButton className="w-full py-3 text-base rounded-full shadow-md">
+                      Get in Touch
+                    </GradientButton>
+                  </Link>
+                </div>
               </nav>
             </SheetContent>
           </Sheet>
