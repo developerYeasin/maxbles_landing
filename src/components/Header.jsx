@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, ChevronDown } from 'lucide-react';
+import { Menu, ChevronDown, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react'; // Import social icons
 import { Link } from 'react-router-dom';
 import {
   DropdownMenu,
@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
+import GradientButton from './GradientButton.jsx'; // Import GradientButton
 
 const Header = () => {
   return (
@@ -63,6 +64,26 @@ const Header = () => {
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
             </Link>
           </nav>
+        </div>
+        {/* New social icons and Get in Touch button */}
+        <div className="hidden md:flex items-center space-x-4 animate-slide-in-right delay-500">
+          <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
+            <Facebook className="h-5 w-5" />
+          </a>
+          <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
+            <Twitter className="h-5 w-5" />
+          </a>
+          <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
+            <Linkedin className="h-5 w-5" />
+          </a>
+          <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
+            <Instagram className="h-5 w-5" />
+          </a>
+          <Link to="/contact">
+            <GradientButton size="sm" className="px-4 py-2 text-sm rounded-full shadow-md">
+              Get in Touch
+            </GradientButton>
+          </Link>
         </div>
         <div className="md:hidden animate-slide-in-right">
           <Sheet>
