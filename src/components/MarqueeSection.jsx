@@ -32,7 +32,8 @@ const MarqueeSection = ({ className }) => {
         onMouseEnter={() => setIsPaused(true)} // Pause on hover
         onMouseLeave={() => setIsPaused(false)} // Resume on mouse leave
       >
-        <div className={cn("flex whitespace-nowrap", isPaused ? "animation-paused" : "animate-marquee")}>
+        {/* Always apply animate-marquee, then conditionally apply animation-paused */}
+        <div className={cn("flex whitespace-nowrap animate-marquee", isPaused && "animation-paused")}>
           {duplicatedLogos.map((logo, index) => (
             <div key={index} className="flex-shrink-0 mx-8">
               <img 
@@ -44,7 +45,7 @@ const MarqueeSection = ({ className }) => {
           ))}
         </div>
         {/* This second div is for seamless looping */}
-        <div className={cn("flex whitespace-nowrap", isPaused ? "animation-paused" : "animate-marquee")} aria-hidden="true">
+        <div className={cn("flex whitespace-nowrap animate-marquee", isPaused && "animation-paused")} aria-hidden="true">
           {duplicatedLogos.map((logo, index) => (
             <div key={index} className="flex-shrink-0 mx-8">
               <img 
