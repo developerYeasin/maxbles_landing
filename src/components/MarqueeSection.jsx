@@ -28,9 +28,10 @@ const MarqueeSection = ({ className }) => {
         </h2>
       </div>
       <div className="relative w-full overflow-hidden py-4">
-        <div className="flex animate-marquee whitespace-nowrap">
+        {/* Added gap-x-16 to the flex container and removed mx from individual items */}
+        <div className="flex animate-marquee whitespace-nowrap gap-x-16">
           {duplicatedLogos.map((logo, index) => (
-            <div key={index} className="flex-shrink-0 mx-8 inline-flex items-center justify-center">
+            <div key={index} className="flex-shrink-0 inline-flex items-center justify-center">
               <img 
                 src={logo} 
                 alt={`Client Logo ${index + 1}`} 
