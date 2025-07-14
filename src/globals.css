@@ -226,6 +226,7 @@
 
 .animate-marquee {
   animation: marquee 8s linear infinite; /* Adjusted duration to 8s for faster speed */
+  width: max-content; /* Ensure it takes up the full width of its content for seamless loop */
 }
 
 .animate-marquee:hover {

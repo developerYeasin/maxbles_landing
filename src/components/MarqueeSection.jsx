@@ -17,9 +17,6 @@ const logos = [
 ];
 
 const MarqueeSection = ({ className }) => {
-  // Duplicate logos to ensure seamless looping for the marquee effect
-  const duplicatedLogos = [...logos, ...logos];
-
   return (
     <section className={cn("py-12 bg-gray-100/80 dark:bg-gray-900/80 overflow-hidden", className)}>
       <div className="container mx-auto px-4 text-center mb-8">
@@ -28,17 +25,32 @@ const MarqueeSection = ({ className }) => {
         </h2>
       </div>
       <div className="relative w-full overflow-hidden py-4">
-        {/* Added gap-x-16 to the flex container and removed mx from individual items */}
-        <div className="flex animate-marquee whitespace-nowrap gap-x-16">
-          {duplicatedLogos.map((logo, index) => (
-            <div key={index} className="flex-shrink-0 inline-flex items-center justify-center">
-              <img 
-                src={logo} 
-                alt={`Client Logo ${index + 1}`} 
-                className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 dark:invert" 
-              />
-            </div>
-          ))}
+        {/* The outer flex container for the marquee effect */}
+        <div className="flex animate-marquee whitespace-nowrap">
+          {/* First segment of logos */}
+          <div className="flex gap-x-16 flex-shrink-0">
+            {logos.map((logo, index) => (
+              <div key={`first-${index}`} className="inline-flex items-center justify-center">
+                <img 
+                  src={logo} 
+                  alt={`Client Logo ${index + 1}`} 
+                  className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 dark:invert" 
+                />
+              </div>
+            ))}
+          </div>
+          {/* Second segment of logos (duplicate) */}
+          <div className="flex gap-x-16 flex-shrink-0">
+            {logos.map((logo, index) => (
+              <div key={`second-${index}`} className="inline-flex items-center justify-center">
+                <img 
+                  src={logo} 
+                  alt={`Client Logo ${index + 1}`} 
+                  className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 dark:invert" 
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
