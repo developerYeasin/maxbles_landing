@@ -225,7 +225,11 @@
 }
 
 .animate-marquee {
-  animation: marquee 6s linear infinite; /* Adjusted duration to 6s for faster speed */
+  animation: marquee 15s linear infinite; /* Adjusted duration for smoother loop */
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused; /* Pause on hover */
 }
 
 .animate-pulse-subtle {
