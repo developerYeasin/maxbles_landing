@@ -10,15 +10,17 @@ import PortfolioSection from '@/components/PortfolioSection.jsx';
 import TestimonialsSection from '@/components/TestimonialsSection.jsx';
 import BlogSection from '@/components/BlogSection.jsx';
 import GradientButton from '@/components/GradientButton.jsx';
-import MarqueeSection from '@/components/MarqueeSection.jsx'; // Import MarqueeSection
+import MarqueeSection from '@/components/MarqueeSection.jsx';
+import BackgroundVideo from '@/components/BackgroundVideo.jsx'; // Import the new component
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative">
+      <BackgroundVideo /> {/* Add the background video here */}
       <Header />
       <main className="flex-grow">
         <HeroSection />
-        <section className="py-20 bg-white dark:bg-gray-800 text-center">
+        <section className="py-20 bg-white/80 dark:bg-gray-800/80 text-center relative z-10"> {/* Added relative z-10 and adjusted opacity */}
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-6 animate-fade-in-up">
               Your Vision, Our Digital Expertise
@@ -40,10 +42,10 @@ const Index = () => {
             </div>
           </div>
         </section>
-        <MarqueeSection /> {/* First MarqueeSection */}
+        <MarqueeSection />
         <AboutSection />
         <ServicesSection />
-        <MarqueeSection /> {/* Second MarqueeSection */}
+        <MarqueeSection />
         <PortfolioSection />
         <TestimonialsSection />
         <BlogSection />
