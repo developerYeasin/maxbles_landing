@@ -225,7 +225,7 @@
 }
 
 .animate-marquee {
-  animation: marquee 8s linear infinite; /* Adjusted duration to 8s for faster speed */
+  animation: marquee 12s linear infinite; /* Adjusted duration to 12s for slower speed */
   width: max-content; /* Ensure it takes up the full width of its content for seamless loop */
 }
 
