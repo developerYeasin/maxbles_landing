@@ -28,14 +28,14 @@ const Index = () => {
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8 animate-fade-in-up delay-200">
               Maxbles is dedicated to transforming your ideas into powerful digital experiences. From stunning web designs to robust development and strategic marketing, we are your partner in innovation.
             </p>
-            <div className="flex justify-center space-x-4 animate-fade-in-up delay-300">
-              <Link to="/services">
-                <GradientButton size="lg" className="text-lg px-8 py-6 rounded-full shadow-lg">
+            <div className="flex flex-col md:flex-row items-center md:space-x-4 space-y-4 animate-fade-in-up delay-300">
+              <Link to="/services" className="w-full md:w-auto">
+                <GradientButton size="lg" className="w-full text-lg px-6 py-4 md:px-8 md:py-6 rounded-full shadow-lg">
                   Explore Services
                 </GradientButton>
               </Link>
-              <Link to="/contact">
-                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 dark:border-primary-foreground dark:text-primary-foreground dark:hover:bg-primary-foreground/10 text-lg px-8 py-6 rounded-full shadow-lg transform transition-transform hover:scale-105">
+              <Link to="/contact" className="w-full md:w-auto">
+                <Button size="lg" variant="outline" className="w-full border-primary text-primary hover:bg-primary/10 dark:border-primary-foreground dark:text-primary-foreground dark:hover:bg-primary-foreground/10 text-lg px-6 py-4 md:px-8 md:py-6 rounded-full shadow-lg transform transition-transform hover:scale-105">
                   Get a Quote
                 </Button>
               </Link>
