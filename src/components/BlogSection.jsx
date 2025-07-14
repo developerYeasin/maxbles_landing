@@ -60,7 +60,7 @@ const BlogSection = ({ className }) => {
           slideClassName="w-full sm:w-1/2 lg:w-1/3" // Adjust slide width for responsiveness
         >
           {blogPosts.map((post, index) => (
-            <Card key={index} className={`overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 hover:shadow-lg transition-shadow duration-300 animate-fade-in-up delay-${index * 100} hover:shadow-xl hover:border-primary transition-all duration-300 transform hover:-translate-y-1 transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105`}>
+            <Card key={index} className={`overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 hover:shadow-lg transition-shadow duration-300 animate-fade-in-up delay-${index * 100} hover:shadow-xl hover:border-primary transition-all duration-300 transform hover:-translate-y-1`}> {/* Removed complex 3D transforms */}
               <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
               <CardHeader className="pb-2">
                 <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">{post.title}</CardTitle>

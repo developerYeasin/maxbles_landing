@@ -54,7 +54,7 @@ const TestimonialsSection = ({ className }) => {
           slideClassName="w-full sm:w-1/2 lg:w-1/3" // Adjust slide width for responsiveness
         >
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className={`p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-900/80 flex flex-col items-center text-center animate-zoom-in delay-${index * 100} hover:shadow-xl hover:border-accent transition-all duration-300 transform hover:-translate-y-1 transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105`}>
+            <Card key={index} className={`p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-900/80 flex flex-col items-center text-center animate-zoom-in delay-${index * 100} hover:shadow-xl hover:border-accent transition-all duration-300 transform hover:-translate-y-1`}> {/* Removed complex 3D transforms */}
               <CardContent className="flex flex-col items-center">
                 <Avatar className="h-20 w-20 mb-4 border-2 border-blue-500 transition-all duration-300 group-hover:scale-105 group-hover:border-accent">
                   <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
