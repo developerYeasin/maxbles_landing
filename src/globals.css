@@ -225,7 +225,7 @@
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite; /* Adjust duration as needed */
+  animation: marquee 15s linear infinite; /* Adjusted duration to 15s for faster speed */
 }
 
 .animate-pulse-subtle {
