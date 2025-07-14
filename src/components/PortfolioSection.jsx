@@ -66,10 +66,10 @@ const PortfolioSection = ({ className }) => {
         <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">Our Portfolio</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioItems.map((item, index) => (
-            <Card key={index} className={`overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 group animate-scale-in delay-${index * 100}`}>
+            <Card key={index} className={`overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 group animate-scale-in delay-${index * 100} hover:shadow-xl hover:border-primary transition-all duration-300 transform hover:-translate-y-1`}>
               <div className="relative overflow-hidden">
                 <img src={item.image} alt={item.title} className="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-blue-600 bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
+                <div className="absolute inset-0 bg-primary/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
                   <div className="text-white text-center p-4">
                     <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
                     <p className="text-sm mb-2">{item.category}</p>
