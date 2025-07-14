@@ -48,14 +48,14 @@ const TestimonialsSection = ({ className }) => {
     <section id="testimonials" className={cn("py-20 bg-white/80 dark:bg-gray-800/80", className)}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">What Our Clients Say</h2>
-        <Carousel 
-          options={{ loop: true, align: 'start' }} 
+        <Carousel
+          options={{ loop: true, align: 'start' }}
           className="py-4"
-          slideClassName="w-full sm:w-1/2 lg:w-1/3" // Adjust slide width for responsiveness
+          slideClassName="w-full sm:w-1/2 lg:w-1/3 flex" // Added flex to slideClassName to make cards fill height
         >
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className={`p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-900/80 flex flex-col items-center text-center animate-zoom-in delay-${index * 100} hover:shadow-xl hover:border-accent transition-all duration-300 transform hover:-translate-y-1`}> {/* Removed complex 3D transforms */}
-              <CardContent className="flex flex-col items-center">
+            <Card key={index} className={`p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-900/80 flex flex-col items-center text-center animate-zoom-in delay-${index * 100} hover:shadow-xl hover:border-accent transition-all duration-300 transform hover:-translate-y-1 h-full`}> {/* Added h-full to Card */}
+              <CardContent className="flex flex-col items-center flex-grow"> {/* Added flex-grow to CardContent */}
                 <Avatar className="h-20 w-20 mb-4 border-2 border-blue-500 transition-all duration-300 group-hover:scale-105 group-hover:border-accent">
                   <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
                   <AvatarFallback className="bg-blue-100 text-blue-600">{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>

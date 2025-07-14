@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { cn } from "@/lib/utils.js";
@@ -12,32 +12,46 @@ const Carousel = ({ children, options, className, slideClassName }) => {
   };
 
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay(autoplayOptions)]);
+  const [isDragging, setIsDragging] = useState(false); // New state for dragging
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
+  const handleMouseDown = useCallback(() => {
+    setIsDragging(true);
+  }, []);
 
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
 
-  // Optional: Add navigation dots or arrows if needed, but for auto-play, often not required.
-  // For simplicity, I'm omitting explicit navigation buttons for now.
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.on('pointerDown', handleMouseDown);
+      emblaApi.on('pointerUp', handleMouseUp);
+      emblaApi.on('pointerLeave', handleMouseUp); // Also reset if mouse leaves while dragging
+    }
+    return () => {
+      if (emblaApi) {
+        emblaApi.off('pointerDown', handleMouseDown);
+        emblaApi.off('pointerUp', handleMouseUp);
+        emblaApi.off('pointerLeave', handleMouseUp);
+      }
+    };
+  }, [emblaApi, handleMouseDown, handleMouseUp]);
+
 
   return (
     <div className={cn("embla overflow-hidden relative", className)}>
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container flex touch-pan-y -ml-4 cursor-grab"> {/* Added cursor-grab */}
+      <div
+        className={cn("embla__viewport", isDragging ? "cursor-grabbing" : "cursor-grab")} // Apply cursor based on dragging state
+        ref={emblaRef}
+      >
+        <div className="embla__container flex touch-pan-y -ml-4"> {/* Removed cursor-grab from here */}
           {React.Children.map(children, (child, index) => (
-            <div key={index} className={cn("embla__slide flex-shrink-0 min-w-0 pl-4", slideClassName)}> {/* Added padding for gap */}
+            <div key={index} className={cn("embla__slide flex-shrink-0 min-w-0 pl-4", slideClassName)}>
               {child}
             </div>
           ))}
         </div>
       </div>
-      {/* Optional navigation arrows */}
-      {/* <button className="embla__prev absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/50 p-2 rounded-full shadow-md" onClick={scrollPrev}>&#9664;</button>
-      <button className="embla__next absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/50 p-2 rounded-full shadow-md" onClick={scrollNext}>&#9654;</button> */}
     </div>
   );
 };
