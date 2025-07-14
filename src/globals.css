@@ -174,16 +174,6 @@
   }
 }
 
-/* Marquee animation */
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%); /* Scrolls half the content width to loop seamlessly */
-  }
-}
-
 /* New subtle pulse animation */
 @keyframes pulse-subtle {
   0%, 100% {
@@ -222,10 +212,6 @@
 
 .animate-rotate-in {
   animation: rotate-in 0.8s ease-out forwards;
-}
-
-.animate-marquee {
-  animation: marquee 10s linear infinite; /* Adjusted duration to 10s for even faster speed */
 }
 
 .animate-pulse-subtle {
