@@ -53,7 +53,7 @@ const ServicesSection = ({ className }) => {
         <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">Our Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className={`text-center p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:shadow-lg hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-2 animate-zoom-in delay-${index * 100} group`}>
+            <Card key={index} className={`text-center p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:shadow-lg hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-2 animate-zoom-in delay-${index * 100} group transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105`}>
               <CardHeader className="flex flex-col items-center pb-4">
                 <service.icon className="h-12 w-12 text-blue-500 mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:text-primary" />
                 <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">{service.title}</CardTitle>

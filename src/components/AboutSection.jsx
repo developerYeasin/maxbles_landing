@@ -18,7 +18,7 @@ const AboutSection = ({ className }) => {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <Card className="text-center p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition-shadow duration-300 animate-zoom-in delay-300 group">
+            <Card className="text-center p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition-shadow duration-300 animate-zoom-in delay-300 group transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105">
               <CardHeader className="flex flex-col items-center pb-4">
                 <Lightbulb className="h-12 w-12 text-blue-500 mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:text-primary" />
                 <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">Innovative Ideas</CardTitle>
@@ -27,7 +27,7 @@ const AboutSection = ({ className }) => {
                 We bring fresh perspectives and creative solutions to every project, pushing boundaries to deliver unique outcomes.
               </CardContent>
             </Card>
-            <Card className="text-center p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition-shadow duration-300 animate-zoom-in delay-400 group">
+            <Card className="text-center p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition-shadow duration-300 animate-zoom-in delay-400 group transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105">
               <CardHeader className="flex flex-col items-center pb-4">
                 <Users className="h-12 w-12 text-pink-500 mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:text-accent" />
                 <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">Expert Team</CardTitle>
@@ -36,7 +36,7 @@ const AboutSection = ({ className }) => {
                 Our professionals are dedicated to excellence and client satisfaction, with years of experience in the digital realm.
               </CardContent>
             </Card>
-            <Card className="text-center p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition-shadow duration-300 animate-zoom-in delay-500 group">
+            <Card className="text-center p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition-shadow duration-300 animate-zoom-in delay-500 group transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105">
               <CardHeader className="flex flex-col items-center pb-4">
                 <Rocket className="h-12 w-12 text-green-500 mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:text-green-600" />
                 <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">Driven by Results</CardTitle>

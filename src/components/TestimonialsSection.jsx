@@ -49,7 +49,7 @@ const TestimonialsSection = ({ className }) => {
         <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">What Our Clients Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className={`p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 flex flex-col items-center text-center animate-zoom-in delay-${index * 100} hover:shadow-xl hover:border-accent transition-all duration-300 transform hover:-translate-y-1`}>
+            <Card key={index} className={`p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 flex flex-col items-center text-center animate-zoom-in delay-${index * 100} hover:shadow-xl hover:border-accent transition-all duration-300 transform hover:-translate-y-1 transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105`}>
               <CardContent className="flex flex-col items-center">
                 <Avatar className="h-20 w-20 mb-4 border-2 border-blue-500 transition-all duration-300 group-hover:scale-105 group-hover:border-accent">
                   <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
