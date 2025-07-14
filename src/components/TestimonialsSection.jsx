@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils.js";
+import Carousel from './Carousel.jsx'; // Import the new Carousel component
 
 const testimonials = [
   {
@@ -47,7 +48,11 @@ const TestimonialsSection = ({ className }) => {
     <section id="testimonials" className={cn("py-20 bg-white/80 dark:bg-gray-800/80", className)}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">What Our Clients Say</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Carousel 
+          options={{ loop: true, align: 'start' }} 
+          className="py-4"
+          slideClassName="w-full sm:w-1/2 lg:w-1/3" // Adjust slide width for responsiveness
+        >
           {testimonials.map((testimonial, index) => (
             <Card key={index} className={`p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-900/80 flex flex-col items-center text-center animate-zoom-in delay-${index * 100} hover:shadow-xl hover:border-accent transition-all duration-300 transform hover:-translate-y-1 transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105`}>
               <CardContent className="flex flex-col items-center">
@@ -61,7 +66,7 @@ const TestimonialsSection = ({ className }) => {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </Carousel>
       </div>
     </section>
   );

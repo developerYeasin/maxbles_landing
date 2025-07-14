@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils.js";
+import Carousel from './Carousel.jsx'; // Import the new Carousel component
 
 const newImages = [
   "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg",
@@ -53,7 +54,11 @@ const BlogSection = ({ className }) => {
     <section id="blog" className={cn("py-20 bg-gray-50/80 dark:bg-gray-900/80", className)}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">Latest from Our Blog</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Carousel 
+          options={{ loop: true, align: 'start' }} 
+          className="py-4"
+          slideClassName="w-full sm:w-1/2 lg:w-1/3" // Adjust slide width for responsiveness
+        >
           {blogPosts.map((post, index) => (
             <Card key={index} className={`overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 hover:shadow-lg transition-shadow duration-300 animate-fade-in-up delay-${index * 100} hover:shadow-xl hover:border-primary transition-all duration-300 transform hover:-translate-y-1 transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105`}>
               <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
@@ -67,7 +72,7 @@ const BlogSection = ({ className }) => {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </Carousel>
       </div>
     </section>
   );

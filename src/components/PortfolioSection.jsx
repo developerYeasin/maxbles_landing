@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils.js";
+import Carousel from './Carousel.jsx'; // Import the new Carousel component
 
 const newImages = [
   "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg",
@@ -64,7 +65,11 @@ const PortfolioSection = ({ className }) => {
     <section id="portfolio" className={cn("py-20 bg-gray-50/80 dark:bg-gray-900/80", className)}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">Our Portfolio</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Carousel 
+          options={{ loop: true, align: 'start' }} 
+          className="py-4"
+          slideClassName="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" // Adjust slide width for responsiveness
+        >
           {portfolioItems.map((item, index) => (
             <Card key={index} className={`overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 group animate-scale-in delay-${index * 100} hover:shadow-xl hover:border-primary transition-all duration-300 transform hover:-translate-y-1 transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105`}>
               <div className="relative overflow-hidden">
@@ -83,7 +88,7 @@ const PortfolioSection = ({ className }) => {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </Carousel>
       </div>
     </section>
   );
