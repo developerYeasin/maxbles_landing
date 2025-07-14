@@ -225,7 +225,7 @@
 }
 
 .animate-marquee {
-  animation: marquee 15s linear infinite; /* Adjusted duration for smoother loop */
+  animation: marquee 8s linear infinite; /* Adjusted duration to 8s for faster speed */
 }
 
 .animate-marquee:hover {
