@@ -15,7 +15,7 @@ const MarqueeSection = ({ className }) => {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section className={cn("py-12 bg-gray-100 dark:bg-gray-900 overflow-hidden", className)}>
+    <section className={cn("py-12 bg-gray-100/80 dark:bg-gray-900/80 overflow-hidden", className)}>
       <div className="container mx-auto px-4 text-center mb-8">
         <h2 className="text-3xl font-bold text-gray-800 dark:text-white animate-fade-in-up">
           Trusted by Leading Brands

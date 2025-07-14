@@ -39,9 +39,9 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="hero" className="bg-slate-50 dark:bg-gray-950 flex items-center justify-center min-h-screen p-4">
+    <section id="hero" className="flex items-center justify-center min-h-screen p-4">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 bg-white dark:bg-gray-900 p-8 md:p-20 rounded-3xl shadow-lg overflow-hidden animate-fade-in-up">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 bg-white/80 dark:bg-gray-900/80 p-8 md:p-20 rounded-3xl shadow-lg overflow-hidden animate-fade-in-up">
           {/* Text Content Section */}
           <div className="md:w-5/12 text-center md:text-left">
             <p className="text-gradient-primary font-bold tracking-wider mb-3 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>

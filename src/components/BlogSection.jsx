@@ -50,12 +50,12 @@ const blogPosts = [
 
 const BlogSection = ({ className }) => {
   return (
-    <section id="blog" className={cn("py-20 bg-gray-50 dark:bg-gray-900", className)}>
+    <section id="blog" className={cn("py-20 bg-gray-50/80 dark:bg-gray-900/80", className)}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">Latest from Our Blog</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
-            <Card key={index} className={`overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:shadow-lg transition-shadow duration-300 animate-fade-in-up delay-${index * 100} hover:shadow-xl hover:border-primary transition-all duration-300 transform hover:-translate-y-1 transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105`}>
+            <Card key={index} className={`overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 hover:shadow-lg transition-shadow duration-300 animate-fade-in-up delay-${index * 100} hover:shadow-xl hover:border-primary transition-all duration-300 transform hover:-translate-y-1 transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105`}>
               <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
               <CardHeader className="pb-2">
                 <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">{post.title}</CardTitle>
