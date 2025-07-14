@@ -1,27 +1,28 @@
-import { Toaster as ToasterPrimitive } from "@/components/ui/toast";
+import { Toast, ToastProvider, ToastViewport, ToastAction, ToastClose, ToastTitle, ToastDescription } from "@/components/ui/toast";
 import { useToast } from "@/components/ui/use-toast";
 
 export function Toaster() {
   const { toasts } = useToast();
 
   return (
-    (<ToasterPrimitive>
+    <ToastProvider>
+      <ToastViewport />
       {toasts.map(function ({ id, title, description, action, ...props }) {
         return (
-          <ToasterPrimitive.Toast key={id} {...props}>
+          <Toast key={id} {...props}>
             <div className="grid gap-1">
-              {title && <ToasterPrimitive.ToastTitle>{title}</ToasterPrimitive.ToastTitle>}
+              {title && <ToastTitle>{title}</ToastTitle>}
               {description && (
-                <ToasterPrimitive.ToastDescription>
+                <ToastDescription>
                   {description}
-                </ToasterPrimitive.ToastDescription>
+                </ToastDescription>
               )}
             </div>
             {action}
-            <ToasterPrimitive.ToastClose />
-          </ToasterPrimitive.Toast>
+            <ToastClose />
+          </Toast>
         );
       })}
-    </ToasterPrimitive>)
+    </ToastProvider>
   );
 }
