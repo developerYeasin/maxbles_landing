@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from "@/lib/utils.js";
-import Carousel from './Carousel.jsx'; // Import the Carousel component
 
 const logos = [
   "https://www.zatiqeasy.com/assets/shops/tofa.svg",
@@ -18,6 +17,9 @@ const logos = [
 ];
 
 const MarqueeSection = ({ className }) => {
+  const duplicatedLogos = [...logos, ...logos]; // For seamless loop
+  const [isPaused, setIsPaused] = useState(false); // State to control pause
+
   return (
     <section className={cn("py-12 bg-gray-100/80 dark:bg-gray-900/80 overflow-hidden", className)}>
       <div className="container mx-auto px-4 text-center mb-8">
@@ -25,14 +27,14 @@ const MarqueeSection = ({ className }) => {
           Trusted by Leading Brands
         </h2>
       </div>
-      <div className="relative w-full">
-        <Carousel
-          options={{ loop: true, align: 'start' }}
-          className="py-4"
-          slideClassName="flex-shrink-0 mx-8" // Adjust slide width for responsiveness
-        >
-          {logos.map((logo, index) => (
-            <div key={index} className="flex-shrink-0">
+      <div 
+        className="relative w-full flex overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]"
+        onMouseEnter={() => setIsPaused(true)} // Pause on hover
+        onMouseLeave={() => setIsPaused(false)} // Resume on mouse leave
+      >
+        <div className={cn("flex whitespace-nowrap", isPaused ? "animation-paused" : "animate-marquee")}>
+          {duplicatedLogos.map((logo, index) => (
+            <div key={index} className="flex-shrink-0 mx-8">
               <img 
                 src={logo} 
                 alt={`Client Logo ${index + 1}`} 
@@ -40,7 +42,19 @@ const MarqueeSection = ({ className }) => {
               />
             </div>
           ))}
-        </Carousel>
+        </div>
+        {/* This second div is for seamless looping */}
+        <div className={cn("flex whitespace-nowrap", isPaused ? "animation-paused" : "animate-marquee")} aria-hidden="true">
+          {duplicatedLogos.map((logo, index) => (
+            <div key={index} className="flex-shrink-0 mx-8">
+              <img 
+                src={logo} 
+                alt={`Client Logo ${index + 1}`} 
+                className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 dark:invert" 
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

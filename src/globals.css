@@ -232,6 +232,11 @@
   animation: pulse-subtle 3s infinite ease-in-out; /* Slow, continuous pulse */
 }
 
+/* New class to pause animation */
+.animation-paused {
+  animation-play-state: paused !important;
+}
+
 
 /* Delay utilities for animations */
 .delay-100 { animation-delay: 0.1s; }
