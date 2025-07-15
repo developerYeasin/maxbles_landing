@@ -98,6 +98,33 @@
     @apply bg-background text-foreground;
     /* Removed: cursor: none; */
   }
+
+  /* Custom Scrollbar Styles for Webkit browsers (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+    width: 8px; /* Width of the vertical scrollbar */
+    height: 8px; /* Height of the horizontal scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background)); /* Color of the scrollbar track */
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary)); /* Color of the scrollbar thumb */
+    border-radius: 10px;
+    border: 2px solid hsl(var(--background)); /* Creates a small border around the thumb */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent)); /* Color of the scrollbar thumb on hover */
+  }
+
+  /* Custom Scrollbar Styles for Firefox */
+  html {
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: hsl(var(--primary)) hsl(var(--background)); /* thumb color track color */
+  }
 }
 
 /* Custom Animations */
