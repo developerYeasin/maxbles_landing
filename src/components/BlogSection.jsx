@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils.js";
 import Carousel from './Carousel.jsx'; // Import the new Carousel component
+import { Link } from 'react-router-dom'; // Import Link
 
 const newImages = [
   "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg",
@@ -12,6 +13,7 @@ const newImages = [
 
 const blogPosts = [
   {
+    slug: "the-future-of-web-design-trends-to-watch-in-2024",
     title: "The Future of Web Design: Trends to Watch in 2024",
     date: "October 26, 2023",
     excerpt: "Explore the exciting new trends shaping the landscape of web design and user experience, from AI integration to immersive interfaces. Stay ahead of the curve with our expert insights.",
@@ -68,7 +70,9 @@ const BlogSection = ({ className }) => {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">{post.excerpt}</p>
-                <Button variant="link" className="p-0 h-auto text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Read More</Button>
+                <Link to={`/blog/${post.slug}`}> {/* Link to the new single blog post page */}
+                  <Button variant="link" className="p-0 h-auto text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Read More</Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
