@@ -1,23 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { toast } from "@/components/ui/use-toast";
-import GradientButton from './GradientButton.jsx'; // Import GradientButton
+import GradientButton from './GradientButton.jsx';
+import { submitContactForm } from '@/lib/api.js'; // Import the API function
 
 const ContactSection = () => {
-  const handleSubmit = (e) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // In a real application, you would send this data to a backend.
-    // For now, we'll just show a toast notification.
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We will get back to you soon.",
-    });
-    // Clear form fields (optional)
-    (e.target).reset();
+    setIsSubmitting(true);
+    try {
+      const response = await submitContactForm(formData);
+      toast({
+        title: "Message Sent!",
+        description: response.message,
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -47,7 +73,6 @@ const ContactSection = () => {
               <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Connect With Us</h3>
               <p className="text-gray-700 dark:text-gray-300">Follow us on social media for updates and insights:</p>
               <div className="flex space-x-4 mt-4">
-                {/* Placeholder for social media icons */}
                 <a href="#" className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-600 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
                 <a href="#" className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-600 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2 1.1 1.2 3 1.9 5 2 1.5 1.5 3.3 2.3 5.2 2.3 6.5 0 10.9-5.6 10.9-10.9V4.5L22 4Z"/></svg></a>
                 <a href="#" className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-600 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
@@ -59,21 +84,23 @@ const ContactSection = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Label htmlFor="name" className="text-gray-800 dark:text-white">Name</Label>
-                <Input id="name" type="text" placeholder="Your Name" required className="mt-1 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white" />
+                <Input id="name" type="text" placeholder="Your Name" required className="mt-1 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white" value={formData.name} onChange={handleChange} />
               </div>
               <div>
                 <Label htmlFor="email" className="text-gray-800 dark:text-white">Email</Label>
-                <Input id="email" type="email" placeholder="Your Email" required className="mt-1 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white" />
+                <Input id="email" type="email" placeholder="Your Email" required className="mt-1 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white" value={formData.email} onChange={handleChange} />
               </div>
               <div>
                 <Label htmlFor="subject" className="text-gray-800 dark:text-white">Subject</Label>
-                <Input id="subject" type="text" placeholder="Subject" required className="mt-1 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white" />
+                <Input id="subject" type="text" placeholder="Subject" required className="mt-1 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white" value={formData.subject} onChange={handleChange} />
               </div>
               <div>
                 <Label htmlFor="message" className="text-gray-800 dark:text-white">Message</Label>
-                <Textarea id="message" placeholder="Your Message" rows={5} required className="mt-1 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white" />
+                <Textarea id="message" placeholder="Your Message" rows={5} required className="mt-1 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white" value={formData.message} onChange={handleChange} />
               </div>
-              <GradientButton type="submit" className="w-full">Send Message</GradientButton>
+              <GradientButton type="submit" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </GradientButton>
             </form>
           </div>
         </div>

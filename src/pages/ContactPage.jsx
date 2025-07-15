@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,19 +7,45 @@ import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'luc
 import { toast } from "@/components/ui/use-toast";
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
-import GradientButton from '@/components/GradientButton.jsx'; // Import GradientButton
+import GradientButton from '@/components/GradientButton.jsx';
+import { submitContactForm } from '@/lib/api.js'; // Import the API function
 
 const ContactPage = () => {
-  const handleSubmit = (e) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // In a real application, you would send this data to a backend.
-    // For now, we'll just show a toast notification.
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We will get back to you soon.",
-    });
-    // Clear form fields (optional)
-    (e.target).reset();
+    setIsSubmitting(true);
+    try {
+      const response = await submitContactForm(formData);
+      toast({
+        title: "Message Sent!",
+        description: response.message,
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -73,21 +99,23 @@ const ContactPage = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Label htmlFor="name" className="text-gray-800 dark:text-white text-base">Name</Label>
-                <Input id="name" type="text" placeholder="Your Name" required className="mt-2 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:border-primary focus:ring-primary" />
+                <Input id="name" type="text" placeholder="Your Name" required className="mt-2 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:border-primary focus:ring-primary" value={formData.name} onChange={handleChange} />
               </div>
               <div>
                 <Label htmlFor="email" className="text-gray-800 dark:text-white text-base">Email</Label>
-                <Input id="email" type="email" placeholder="Your Email" required className="mt-2 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:border-primary focus:ring-primary" />
+                <Input id="email" type="email" placeholder="Your Email" required className="mt-2 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:border-primary focus:ring-primary" value={formData.email} onChange={handleChange} />
               </div>
               <div>
                 <Label htmlFor="subject" className="text-gray-800 dark:text-white text-base">Subject</Label>
-                <Input id="subject" type="text" placeholder="Subject" required className="mt-2 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:border-primary focus:ring-primary" />
+                <Input id="subject" type="text" placeholder="Subject" required className="mt-2 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:border-primary focus:ring-primary" value={formData.subject} onChange={handleChange} />
               </div>
               <div>
                 <Label htmlFor="message" className="text-gray-800 dark:text-white text-base">Message</Label>
-                <Textarea id="message" placeholder="Your Message" rows={6} required className="mt-2 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:border-primary focus:ring-primary" />
+                <Textarea id="message" placeholder="Your Message" rows={6} required className="mt-2 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white focus:border-primary focus:ring-primary" value={formData.message} onChange={handleChange} />
               </div>
-              <GradientButton type="submit" className="w-full">Send Message</GradientButton>
+              <GradientButton type="submit" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </GradientButton>
             </form>
           </div>
         </div>
