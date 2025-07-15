@@ -51,7 +51,7 @@ const HeroSection = () => {
               Unique Business Consulting.
             </h1>
             <p className="text-gray-600 dark:text-gray-300 mb-10 text-lg animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+              Digital marketing, graphic design, web design and development, Facebook ad campaigns, and video editing services are provided.
             </p>
             <Link to="/about">
               <GradientButton 
