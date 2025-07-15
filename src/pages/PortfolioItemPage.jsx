@@ -110,9 +110,9 @@ const PortfolioItemPage = () => {
                 {item.github_url && (
                   <a href={item.github_url} target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" className="group relative border-gray-300 text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800 shadow-md hover:scale-105 transition-transform overflow-hidden">
-                      <div className="flex items-center justify-center transition-transform duration-300 group-hover:translate-x-0">
+                      <div className="flex items-center"> {/* Removed justify-center */}
                         <Github className="h-5 w-5 mr-2 group-hover:mr-0 transition-all duration-300" />
-                        <span className="transition-opacity duration-300 group-hover:opacity-0 group-hover:w-0 group-hover:overflow-hidden">GitHub Repo</span>
+                        <span className="transition-all duration-300 group-hover:opacity-0 group-hover:w-0 group-hover:overflow-hidden whitespace-nowrap">GitHub Repo</span>
                       </div>
                     </Button>
                   </a>
