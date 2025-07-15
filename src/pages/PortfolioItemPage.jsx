@@ -66,6 +66,9 @@ const PortfolioItemPage = () => {
     );
   }
 
+  // Format description to include line breaks
+  const formattedDescription = item.description ? item.description.replace(/\\n/g, '<br />') : '';
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
       <Header />
@@ -77,7 +80,7 @@ const PortfolioItemPage = () => {
             Category: <span className="font-semibold text-primary dark:text-primary-foreground">{item.category}</span>
           </p>
 
-          <div className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-8" dangerouslySetInnerHTML={{ __html: item.description }}>
+          <div className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-8" dangerouslySetInnerHTML={{ __html: formattedDescription }}>
           </div>
 
           {item.tags && item.tags.length > 0 && (
