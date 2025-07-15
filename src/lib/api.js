@@ -1,4 +1,8 @@
-const API_BASE_URL = 'http://localhost:3034/api'; // Updated API base URL
+// Old local API Base URL (commented out for reference): http://localhost:3034/api
+// Production/Live API Base URL: https://maxbles-server.onrender.com/
+
+// Use environment variable for API_BASE_URL
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3034/api'; // Default to local if not set
 
 export const fetchBlogPosts = async (params = {}) => {
   const query = new URLSearchParams(params).toString();
