@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:3000/api'; // Make sure this matches your Node.js server URL
+const API_BASE_URL = 'http://localhost:3034/api'; // Updated API base URL
 
 export const fetchBlogPosts = async (params = {}) => {
   const query = new URLSearchParams(params).toString();
