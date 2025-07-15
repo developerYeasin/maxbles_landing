@@ -62,6 +62,21 @@ export const fetchPortfolioItemBySlug = async (slug) => {
   }
 };
 
+export const fetchTestimonials = async (params = {}) => {
+  const query = new URLSearchParams(params).toString();
+  const url = `${API_BASE_URL}/testimonials${query ? `?${query}` : ''}`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching testimonials:", error);
+    throw error;
+  }
+};
+
 export const submitContactForm = async (formData) => {
   try {
     const response = await fetch(`${API_BASE_URL}/contact`, {
