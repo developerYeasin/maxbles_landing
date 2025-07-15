@@ -111,8 +111,8 @@ const PortfolioItemPage = () => {
                   <a href={item.github_url} target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" className="group relative border-gray-300 text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800 shadow-md hover:scale-105 transition-transform overflow-hidden">
                       <div className="flex items-center justify-center">
-                        <Github className="h-5 w-5 mr-2 transition-all duration-300 group-hover:mr-0" />
-                        <span className="transition-all duration-300 group-hover:opacity-0 group-hover:max-w-0 group-hover:overflow-hidden whitespace-nowrap">GitHub Repo</span>
+                        <Github className="h-5 w-5 mr-2 transition-all duration-300" />
+                        <span className="transition-all duration-300 whitespace-nowrap">GitHub Repo</span>
                       </div>
                     </Button>
                   </a>
