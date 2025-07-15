@@ -77,7 +77,7 @@ const PortfolioItemPage = () => {
             Category: <span className="font-semibold text-primary dark:text-primary-foreground">{item.category}</span>
           </p>
 
-          <div className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-8" dangerouslySetInnerHTML={{ __html: item.fullContent }}>
+          <div className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-8" dangerouslySetInnerHTML={{ __html: item.description }}>
           </div>
 
           {item.tags && item.tags.length > 0 && (
@@ -93,19 +93,19 @@ const PortfolioItemPage = () => {
             </div>
           )}
 
-          {(item.type === 'website' || item.type === 'mobile-app') && item.liveUrl && (
+          {(item.type === 'website' || item.type === 'mobile-app') && item.live_url && (
             <div className="mb-8">
               <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Project Links:</h3>
               <div className="flex flex-wrap gap-4">
-                {item.liveUrl && (
-                  <a href={item.liveUrl} target="_blank" rel="noopener noreferrer">
+                {item.live_url && (
+                  <a href={item.live_url} target="_blank" rel="noopener noreferrer">
                     <Button className="bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-md hover:scale-105 transition-transform">
                       <ExternalLink className="h-5 w-5 mr-2" /> Live Preview
                     </Button>
                   </a>
                 )}
-                {item.githubUrl && (
-                  <a href={item.githubUrl} target="_blank" rel="noopener noreferrer">
+                {item.github_url && (
+                  <a href={item.github_url} target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800 shadow-md hover:scale-105 transition-transform">
                       <Github className="h-5 w-5 mr-2" /> GitHub Repo
                     </Button>
@@ -115,12 +115,12 @@ const PortfolioItemPage = () => {
             </div>
           )}
 
-          {item.type === 'website' && item.liveUrl && (
+          {item.type === 'website' && item.live_url && (
             <div className="mt-10 mb-8">
               <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Live Website Preview:</h3>
               <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden shadow-xl border border-primary/30 dark:border-primary/60"> {/* 16:9 Aspect Ratio */}
                 <iframe
-                  src={item.liveUrl}
+                  src={item.live_url}
                   title={`${item.title} Live Preview`}
                   className="absolute top-0 left-0 w-full h-full border-0 rounded-lg"
                   allowFullScreen
