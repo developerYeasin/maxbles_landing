@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils.js";
 import Carousel from './Carousel.jsx'; // Import the new Carousel component
+import { Link } from 'react-router-dom'; // Import Link
 
 const newImages = [
   "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg",
@@ -11,52 +12,68 @@ const newImages = [
 
 const portfolioItems = [
   {
+    slug: "e-commerce-redesign-luxeboutique",
     title: "E-commerce Redesign",
     category: "Web Design",
     image: newImages[0],
-    description: "A complete overhaul of an existing e-commerce platform, focusing on user experience and conversion rates. Implemented modern UI/UX principles and a responsive design for all devices."
+    description: "A complete overhaul of an existing e-commerce platform, focusing on user experience and conversion rates. Implemented modern UI/UX principles and a responsive design for all devices.",
+    tags: ["Shopify", "UI/UX", "Responsive Design", "Conversion Optimization"] // Added tags
   },
   {
+    slug: "mobile-app-fitlife-tracker",
     title: "Mobile App Development",
     category: "App Development",
     image: newImages[1],
-    description: "Developed a cross-platform mobile application for a fitness brand, featuring personalized workout plans and progress tracking. Built with React Native for seamless iOS and Android experience."
+    description: "Developed a cross-platform mobile application for a fitness brand, featuring personalized workout plans and progress tracking. Built with React Native for seamless iOS and Android experience.",
+    tags: ["React Native", "iOS", "Android", "Fitness Tech", "API Integration"] // Added tags
   },
   {
+    slug: "brand-identity-quantum-innovations",
     title: "Brand Identity Creation",
     category: "Branding",
     image: newImages[2],
-    description: "Crafted a comprehensive brand identity for a new tech startup, including logo design, typography, color palette, and brand guidelines. Established a strong visual presence from the ground up."
+    description: "Crafted a comprehensive brand identity for a new tech startup, including logo design, typography, color palette, and brand guidelines. Established a strong visual presence from the ground up.",
+    tags: ["Logo Design", "Brand Guidelines", "Visual Identity", "Startup Branding"] // Added tags
   },
   {
+    slug: "saas-platform-ui-dataflow-analytics",
     title: "SaaS Platform UI",
     category: "UI/UX",
     image: newImages[0],
-    description: "Designed an intuitive and efficient user interface for a complex SaaS analytics platform. Focused on data visualization and streamlined workflows to enhance user productivity."
+    description: "Designed an intuitive and efficient user interface for a complex SaaS analytics platform. Focused on data visualization and streamlined workflows to enhance user productivity.",
+    tags: ["SaaS UI", "Data Visualization", "Dashboard Design", "User Research"] // Added tags
   },
   {
+    slug: "marketing-campaign-ecogrow-launch",
     title: "Marketing Campaign",
     category: "Digital Marketing",
     image: newImages[1],
-    description: "Executed a multi-channel digital marketing campaign that resulted in a 40% increase in lead generation. Utilized SEO, SEM, and social media strategies for maximum impact."
+    description: "Executed a multi-channel digital marketing campaign that resulted in a 40% increase in lead generation. Utilized SEO, SEM, and social media strategies for maximum impact.",
+    tags: ["SEO", "SEM", "Social Media Marketing", "Lead Generation", "Content Marketing"] // Added tags
   },
   {
+    slug: "corporate-website-globalconnect",
     title: "Corporate Website",
     category: "Web Development",
     image: newImages[2],
-    description: "Developed a modern, secure, and scalable corporate website for a large enterprise. Integrated various third-party services and ensured compliance with accessibility standards."
+    description: "Developed a modern, secure, and scalable corporate website for a large enterprise. Integrated various third-party services and ensured compliance with accessibility standards.",
+    tags: ["Enterprise Web", "CMS Integration", "Accessibility", "Security"] // Added tags
   },
   {
+    slug: "custom-crm-system-clienthub",
     title: "Custom CRM System",
     category: "Software Development",
     image: newImages[0],
-    description: "Built a bespoke CRM system to manage client relationships and sales pipelines, significantly improving operational efficiency and data management for our client."
+    description: "Built a bespoke CRM system to manage client relationships and sales pipelines, significantly improving operational efficiency and data management for our client.",
+    tags: ["Custom Software", "CRM", "Automation", "Business Process Optimization"] // Added tags
   },
   {
+    slug: "interactive-kiosk-retail-experience",
     title: "Interactive Kiosk Design",
     category: "UI/UX",
     image: newImages[1],
-    description: "Designed and developed an interactive kiosk interface for a retail environment, providing customers with product information and self-service options."
+    description: "Designed and developed an interactive kiosk interface for a retail environment, providing customers with product information and self-service options.",
+    tags: ["Interactive Design", "Retail Tech", "Touchscreen UI", "Customer Engagement"] // Added tags
   },
 ];
 
@@ -72,16 +89,18 @@ const PortfolioSection = ({ className }) => {
         >
           {portfolioItems.map((item, index) => (
             <Card key={index} className={`overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 group animate-scale-in delay-${index * 100} hover:shadow-xl hover:border-primary transition-all duration-300 transform hover:-translate-y-1`}> {/* Removed complex 3D transforms */}
-              <div className="relative overflow-hidden">
-                <img src={item.image} alt={item.title} className="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-primary/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
-                  <div className="text-white text-center p-4">
-                    <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
-                    <p className="text-sm mb-2">{item.category}</p>
-                    <p className="text-xs opacity-80 hidden group-hover:block transition-opacity duration-300">{item.description}</p>
+              <Link to={`/portfolio/${item.slug}`}> {/* Link to the new single portfolio item page */}
+                <div className="relative overflow-hidden">
+                  <img src={item.image} alt={item.title} className="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-primary/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
+                    <div className="text-white text-center p-4">
+                      <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
+                      <p className="text-sm mb-2">{item.category}</p>
+                      <p className="text-xs opacity-80 hidden group-hover:block transition-opacity duration-300">{item.description}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
               <CardContent className="p-4">
                 <h3 className="text-lg font-semibold text-gray-800 dark:text-white">{item.title}</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">{item.category}</p>
