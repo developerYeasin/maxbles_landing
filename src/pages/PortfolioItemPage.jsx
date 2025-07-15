@@ -1,15 +1,12 @@
 import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
+import { useParams, Link } from 'react-router-dom';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
-import { Link } from 'react-router-dom'; // Import Link
+import { Button } from '@/components/ui/button';
+import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 
-const newImages = [
-  "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg",
-  "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2020/08/3-10.jpg",
-  "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/08/2-10.jpg",
-];
-
+// Re-import the portfolioItems data from PortfolioPage.jsx to simulate fetching
+// In a real app, this would come from an API or CMS
 const portfolioItems = [
   {
     slug: "e-commerce-redesign-luxeboutique",
@@ -18,7 +15,7 @@ const portfolioItems = [
     type: "website", // Added type
     liveUrl: "https://www.example.com/luxeboutique", // Example live URL
     githubUrl: "https://github.com/example/luxeboutique", // Example GitHub URL
-    image: newImages[0],
+    image: "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg",
     description: "A complete overhaul of an existing e-commerce platform, focusing on user experience and conversion rates. Implemented modern UI/UX principles and a responsive design for all devices, resulting in a 30% increase in sales.",
     fullContent: `
       <p class="mb-4">The LuxeBoutique project involved a comprehensive redesign of an outdated e-commerce platform. Our primary goals were to enhance the user experience, modernize the visual design, and significantly improve conversion rates across all devices.</p>
@@ -43,7 +40,7 @@ const portfolioItems = [
     category: "App Development",
     type: "mobile-app", // Added type
     liveUrl: "https://www.example.com/fitlife-app", // Example app store link
-    image: newImages[1],
+    image: "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2020/08/3-10.jpg",
     description: "Developed a cross-platform mobile application for a fitness brand, featuring personalized workout plans, progress tracking, and social sharing. Built with React Native for seamless iOS and Android experience, achieving 100k+ downloads.",
     fullContent: `
       <p class="mb-4">FitLife Tracker is a comprehensive cross-platform mobile application designed to empower users on their fitness journey. We partnered with a leading fitness brand to create an intuitive and engaging app that caters to diverse workout needs.</p>
@@ -67,7 +64,7 @@ const portfolioItems = [
     title: "Brand Identity: Quantum Innovations",
     category: "Branding",
     type: "digital-marketing", // Added type
-    image: newImages[2],
+    image: "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/08/2-10.jpg",
     description: "Crafted a comprehensive brand identity for a new tech startup, including logo design, typography, color palette, and brand guidelines. Established a strong visual presence from the ground up, aiding in successful seed funding.",
     fullContent: `
       <p class="mb-4">Quantum Innovations, a nascent tech startup, approached us to build their brand identity from the ground up. Their vision was to be perceived as cutting-edge, reliable, and forward-thinking in the competitive tech space.</p>
@@ -92,7 +89,7 @@ const portfolioItems = [
     category: "UI/UX",
     type: "website", // Added type
     liveUrl: "https://www.example.com/dataflow-analytics", // Example live URL
-    image: newImages[0],
+    image: "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg",
     description: "Designed an intuitive and efficient user interface for a complex SaaS analytics platform. Focused on data visualization and streamlined workflows to enhance user productivity and reduce learning curve by 25%.",
     fullContent: `
       <p class="mb-4">DataFlow Analytics is a powerful SaaS platform designed for businesses to gain deep insights from their data. Our task was to create a user interface that could handle complex data visualization and analysis while remaining intuitive and user-friendly.</p>
@@ -116,7 +113,7 @@ const portfolioItems = [
     title: "Marketing Campaign: EcoGrow Launch",
     category: "Digital Marketing",
     type: "digital-marketing", // Added type
-    image: newImages[1],
+    image: "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2020/08/3-10.jpg",
     description: "Executed a multi-channel digital marketing campaign that resulted in a 40% increase in lead generation and 20% higher engagement rates. Utilized SEO, SEM, and social media strategies for maximum impact.",
     fullContent: `
       <p class="mb-4">The EcoGrow Launch campaign was a multi-faceted digital marketing initiative aimed at introducing a new line of sustainable gardening products to the market. Our goal was to generate significant leads and build brand awareness among environmentally conscious consumers.</p>
@@ -141,7 +138,7 @@ const portfolioItems = [
     category: "Web Development",
     type: "website", // Added type
     liveUrl: "https://www.example.com/globalconnect", // Example live URL
-    image: newImages[2],
+    image: "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/08/2-10.jpg",
     description: "Developed a modern, secure, and scalable corporate website for a large enterprise. Integrated various third-party services and ensured compliance with accessibility standards, improving corporate communication.",
     fullContent: `
       <p class="mb-4">The GlobalConnect project involved developing a robust, secure, and highly scalable corporate website for a multinational enterprise. The goal was to create a central hub for corporate communications, investor relations, and global brand presence.</p>
@@ -166,7 +163,7 @@ const portfolioItems = [
     title: "Custom CRM System: ClientHub",
     category: "Software Development",
     type: "software", // Added type
-    image: newImages[0],
+    image: "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg",
     description: "Built a bespoke CRM system to manage client relationships and sales pipelines, significantly improving operational efficiency and data management for our client. Reduced manual data entry by 50%.",
     fullContent: `
       <p class="mb-4">ClientHub is a custom-built CRM (Customer Relationship Management) system developed to address the unique operational needs of a growing service-based business. The goal was to centralize client data, streamline sales processes, and improve overall team efficiency.</p>
@@ -190,7 +187,7 @@ const portfolioItems = [
     title: "Interactive Kiosk: Retail Experience",
     category: "UI/UX",
     type: "software", // Added type
-    image: newImages[1],
+    image: "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2020/08/3-10.jpg",
     description: "Designed and developed an interactive kiosk interface for a retail environment, providing customers with product information, self-service options, and loyalty program sign-ups. Enhanced in-store engagement.",
     fullContent: `
       <p class="mb-4">This project involved designing and developing an interactive kiosk interface for a modern retail store, aiming to enhance the in-store customer experience and provide self-service options.</p>
@@ -211,53 +208,106 @@ const portfolioItems = [
   },
 ];
 
-const PortfolioPage = () => {
+const PortfolioItemPage = () => {
+  const { slug } = useParams();
+  const item = portfolioItems.find(p => p.slug === slug);
+
+  if (!item) {
+    return (
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
+        <Header />
+        <main className="flex-grow container mx-auto px-4 py-20 text-center">
+          <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">Portfolio Item Not Found</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">The portfolio item you are looking for does not exist.</p>
+          <Link to="/portfolio">
+            <Button variant="outline" className="text-primary dark:text-primary-foreground border-primary dark:border-primary-foreground hover:bg-primary/10 dark:hover:bg-primary-foreground/10">
+              <ArrowLeft className="h-4 w-4 mr-2" /> Back to Portfolio
+            </Button>
+          </Link>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
       <Header />
       <main className="flex-grow container mx-auto px-4 py-20">
-        <section className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-gradient-primary mb-6 animate-fade-in-up">
-            Our Creative Showcase
-          </h1>
-          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">
-            Explore a selection of our recent projects that highlight our expertise in design, development, and digital strategy. Each project is a testament to our commitment to innovation and client success.
+        <article className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-lg border border-primary/20 dark:border-primary/50 animate-fade-in-up">
+          <img src={item.image} alt={item.title} className="w-full h-64 object-cover rounded-lg mb-8 shadow-md" />
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gradient-primary mb-4 leading-tight">{item.title}</h1>
+          <p className="text-gray-600 dark:text-gray-400 text-md mb-6">
+            Category: <span className="font-semibold text-primary dark:text-primary-foreground">{item.category}</span>
           </p>
-        </section>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {portfolioItems.map((item, index) => (
-            <Card key={index} className={`overflow-hidden shadow-lg border border-primary/20 dark:border-primary/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm group animate-scale-in delay-${index * 100}`}>
-              <Link to={`/portfolio/${item.slug}`}> {/* Link to the new single portfolio item page */}
-                <div className="relative overflow-hidden">
-                  <img src={item.image} alt={item.title} className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-primary/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
-                    <div className="text-white text-center p-4">
-                      <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
-                      <p className="text-sm mb-3 opacity-90">{item.category}</p>
-                      <p className="text-base opacity-90 mb-4">{item.description}</p>
-                      <div className="flex flex-wrap justify-center gap-2">
-                        {item.tags.map((tag, tagIndex) => (
-                          <span key={tagIndex} className="bg-white text-primary text-xs px-3 py-1 rounded-full font-medium">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-              <CardContent className="p-4">
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{item.title}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{item.category}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+          <div className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-8" dangerouslySetInnerHTML={{ __html: item.fullContent }}>
+          </div>
+
+          {item.tags && item.tags.length > 0 && (
+            <div className="mb-8">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Technologies & Tags:</h3>
+              <div className="flex flex-wrap gap-3">
+                {item.tags.map((tag, index) => (
+                  <span key={index} className="bg-primary/10 text-primary dark:bg-primary-foreground/10 dark:text-primary-foreground px-4 py-2 rounded-full text-sm font-medium">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {(item.type === 'website' || item.type === 'mobile-app') && item.liveUrl && (
+            <div className="mb-8">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Project Links:</h3>
+              <div className="flex flex-wrap gap-4">
+                {item.liveUrl && (
+                  <a href={item.liveUrl} target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-md hover:scale-105 transition-transform">
+                      <ExternalLink className="h-5 w-5 mr-2" /> Live Preview
+                    </Button>
+                  </a>
+                )}
+                {item.githubUrl && (
+                  <a href={item.githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800 shadow-md hover:scale-105 transition-transform">
+                      <Github className="h-5 w-5 mr-2" /> GitHub Repo
+                    </Button>
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
+
+          {item.type === 'website' && item.liveUrl && (
+            <div className="mt-10 mb-8">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Live Website Preview:</h3>
+              <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden shadow-xl border border-primary/30 dark:border-primary/60"> {/* 16:9 Aspect Ratio */}
+                <iframe
+                  src={item.liveUrl}
+                  title={`${item.title} Live Preview`}
+                  className="absolute top-0 left-0 w-full h-full border-0 rounded-lg"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-4 text-center">
+                Note: Some websites may prevent embedding in an iframe due to security policies (X-Frame-Options).
+              </p>
+            </div>
+          )}
+
+          <div className="mt-10 text-center">
+            <Link to="/portfolio">
+              <Button variant="outline" className="text-primary dark:text-primary-foreground border-primary dark:border-primary-foreground hover:bg-primary/10 dark:hover:bg-primary-foreground/10">
+                <ArrowLeft className="h-4 w-4 mr-2" /> Back to All Projects
+              </Button>
+            </Link>
+          </div>
+        </article>
       </main>
       <Footer />
     </div>
   );
 };
 
-export default PortfolioPage;
+export default PortfolioItemPage;

@@ -1,16 +1,12 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { useParams, Link } from 'react-router-dom';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
-import { Link } from 'react-router-dom'; // Import Link
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
-const newImages = [
-  "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg",
-  "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2020/08/3-10.jpg",
-  "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/08/2-10.jpg",
-];
-
+// Re-import the blogPosts data from BlogPage.jsx to simulate fetching
+// In a real app, this would come from an API or CMS
 const blogPosts = [
   {
     slug: "the-future-of-web-design-trends-to-watch-in-2024",
@@ -31,7 +27,7 @@ const blogPosts = [
       <p class="mb-4">Designing for inclusivity will continue to be a top priority. Beyond basic accessibility standards, future web design will focus on truly universal design principles, ensuring that websites are usable and enjoyable for people of all abilities, including those with cognitive or motor impairments.</p>
       <p class="mt-6">Staying informed about these trends is crucial for anyone involved in digital product development. Embracing these innovations will not only keep your online presence fresh but also ensure you're delivering the best possible experience to your audience.</p>
     `,
-    image: newImages[0],
+    image: "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg",
     author: "Alex Rivera",
     readTime: "7 min read"
   },
@@ -67,7 +63,7 @@ const blogPosts = [
       </ul>
       <p class="mt-6">SEO is an ongoing process, not a one-time task. Regularly monitor your performance using tools like Google Analytics and Search Console, adapt to algorithm changes, and continuously refine your strategy to stay competitive.</p>
     `,
-    image: newImages[1],
+    image: "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2020/08/3-10.jpg",
     author: "Maria Chen",
     readTime: "10 min read"
   },
@@ -98,7 +94,7 @@ const blogPosts = [
       </ul>
       <p class="mt-6">Embracing mobile-first design is no longer an option but a necessity for any business aiming for a strong and effective online presence. It's about putting your users first, regardless of how they choose to access your content.</p>
     `,
-    image: newImages[2],
+    image: "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/08/2-10.jpg",
     author: "David Kim",
     readTime: "5 min read"
   },
@@ -135,7 +131,7 @@ const blogPosts = [
       </ul>
       <p class="mt-6">By weaving compelling stories into your digital marketing strategy, you can move beyond simply selling products and instead build meaningful relationships with your audience, turning them into loyal advocates for your brand.</p>
     `,
-    image: newImages[0],
+    image: "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/10/2.jpg",
     author: "Sophia Lee",
     readTime: "8 min read"
   },
@@ -178,7 +174,7 @@ const blogPosts = [
       </ul>
       <p class="mt-6">The best CMS for your business depends entirely on your specific needs, technical capabilities, and long-term goals. Take the time to evaluate each option against your requirements to make an informed decision that will serve your business well into the future.</p>
     `,
-    image: newImages[1],
+    image: "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2020/08/3-10.jpg",
     author: "Chris Evans",
     readTime: "6 min read"
   },
@@ -220,53 +216,58 @@ const blogPosts = [
       </ol>
       <p class="mt-6">Embracing data-driven marketing is an ongoing journey of learning and optimization. By making data the cornerstone of your marketing strategy, you empower your business to make more informed decisions, achieve better results, and build stronger, more profitable customer relationships.</p>
     `,
-    image: newImages[2],
+    image: "https://obelisk1.themescamp.com/demo2/wp-content/uploads/sites/3/2021/08/2-10.jpg",
     author: "Jessica Wong",
     readTime: "9 min read"
   },
 ];
 
-const BlogPage = () => {
+const BlogPostPage = () => {
+  const { slug } = useParams();
+  const post = blogPosts.find(p => p.slug === slug);
+
+  if (!post) {
+    return (
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
+        <Header />
+        <main className="flex-grow container mx-auto px-4 py-20 text-center">
+          <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">Blog Post Not Found</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">The post you are looking for does not exist.</p>
+          <Link to="/blog">
+            <Button variant="outline" className="text-primary dark:text-primary-foreground border-primary dark:border-primary-foreground hover:bg-primary/10 dark:hover:bg-primary-foreground/10">
+              <ArrowLeft className="h-4 w-4 mr-2" /> Back to Blog
+            </Button>
+          </Link>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
       <Header />
       <main className="flex-grow container mx-auto px-4 py-20">
-        <section className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-gradient-primary mb-6 animate-fade-in-up">
-            Insights from the Maxbles Blog
-          </h1>
-          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">
-            Stay informed with the latest trends, expert advice, and thought leadership in web design, digital marketing, and technology. Our blog is your go-to resource for digital excellence.
+        <article className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-lg border border-primary/20 dark:border-primary/50 animate-fade-in-up">
+          <img src={post.image} alt={post.title} className="w-full h-64 object-cover rounded-lg mb-8 shadow-md" />
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gradient-primary mb-4 leading-tight">{post.title}</h1>
+          <p className="text-gray-600 dark:text-gray-400 text-md mb-6">
+            By <span className="font-semibold text-primary dark:text-primary-foreground">{post.author}</span> on {post.date} &bull; {post.readTime}
           </p>
-        </section>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
-            <Card key={index} className={`overflow-hidden shadow-lg border border-primary/20 dark:border-primary/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm hover:shadow-xl transition-shadow duration-300 animate-slide-in-bottom delay-${index * 100}`}>
-              <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
-              <CardHeader className="pb-2">
-                <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">{post.title}</CardTitle>
-                <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center justify-between">
-                  <span>{post.date}</span>
-                  <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{post.readTime}</span>
-                </p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">{post.excerpt}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-600 dark:text-gray-400">By {post.author}</span>
-                  <Link to={`/blog/${post.slug}`}> {/* Link to the new single blog post page */}
-                    <Button variant="link" className="p-0 h-auto text-primary hover:text-accent dark:text-primary-foreground dark:hover:text-accent-foreground">Read More</Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+          <div className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed text-lg" dangerouslySetInnerHTML={{ __html: post.content }}>
+          </div>
+          <div className="mt-10 text-center">
+            <Link to="/blog">
+              <Button variant="outline" className="text-primary dark:text-primary-foreground border-primary dark:border-primary-foreground hover:bg-primary/10 dark:hover:bg-primary-foreground/10">
+                <ArrowLeft className="h-4 w-4 mr-2" /> Back to All Posts
+              </Button>
+            </Link>
+          </div>
+        </article>
       </main>
       <Footer />
     </div>
   );
 };
 
-export default BlogPage;
+export default BlogPostPage;
