@@ -9,11 +9,14 @@ import PortfolioPage from "./pages/PortfolioPage";
 import TestimonialsPage from "./pages/TestimonialsPage";
 import BlogPage from "./pages/BlogPage";
 import ContactPage from "./pages/ContactPage";
+import ScrollToTopButton from "./components/ScrollToTopButton"; // Import the new button
+import UseScrollToTop from "./hooks/useScrollToTop"; // Import the new hook
 
 const App = () => (
   <TooltipProvider>
     <Toaster />
     <BrowserRouter>
+      <UseScrollToTop /> {/* Use the hook here to scroll to top on route changes */}
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<Index />} />
@@ -27,6 +30,7 @@ const App = () => (
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <ScrollToTopButton /> {/* Add the scroll to top button here */}
     </BrowserRouter>
   </TooltipProvider>
 );
