@@ -68,6 +68,8 @@ const PortfolioItemPage = () => {
 
   // Format description to include line breaks
   const formattedDescription = item.description ? item.description.replace(/\\n/g, '<br />') : '';
+  // Assume full_content is already proper HTML string
+  const fullContentHtml = item.full_content || ''; // Ensure it's not null/undefined
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
@@ -80,8 +82,17 @@ const PortfolioItemPage = () => {
             Category: <span className="font-semibold text-primary dark:text-primary-foreground">{item.category}</span>
           </p>
 
-          <div className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-8" dangerouslySetInnerHTML={{ __html: formattedDescription }}>
-          </div>
+          {formattedDescription && (
+            <div className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-8" dangerouslySetInnerHTML={{ __html: formattedDescription }}>
+            </div>
+          )}
+
+          {fullContentHtml && (
+            <div className="mt-8 prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+              <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">Project Details</h2>
+              <div dangerouslySetInnerHTML={{ __html: fullContentHtml }}></div>
+            </div>
+          )}
 
           {item.tags && item.tags.length > 0 && (
             <div className="mb-8">
