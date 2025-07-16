@@ -87,10 +87,10 @@ const ContactPage = () => {
                 Follow our journey and get the latest updates on social media:
               </p>
               <div className="flex space-x-6 mt-4">
-                <a href="#" className="text-primary hover:text-accent dark:text-primary-foreground dark:hover:text-accent-foreground transition-colors transform hover:scale-110"><Facebook className="h-8 w-8" /></a>
+                <a href="https://www.facebook.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent dark:text-primary-foreground dark:hover:text-accent-foreground transition-colors transform hover:scale-110"><Facebook className="h-8 w-8" /></a>
                 <a href="#" className="text-primary hover:text-accent dark:text-primary-foreground dark:hover:text-accent-foreground transition-colors transform hover:scale-110"><Twitter className="h-8 w-8" /></a>
                 <a href="#" className="text-primary hover:text-accent dark:text-primary-foreground dark:hover:text-accent-foreground transition-colors transform hover:scale-110"><Linkedin className="h-8 w-8" /></a>
-                <a href="#" className="text-primary hover:text-accent dark:text-primary-foreground dark:hover:text-accent-foreground transition-colors transform hover:scale-110"><Instagram className="h-8 w-8" /></a>
+                <a href="https://www.instagram.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent dark:text-primary-foreground dark:hover:text-accent-foreground transition-colors transform hover:scale-110"><Instagram className="h-8 w-8" /></a>
               </div>
             </div>
           </div>

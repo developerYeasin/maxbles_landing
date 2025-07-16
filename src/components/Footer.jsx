@@ -16,10 +16,10 @@ const Footer = () => {
           </Link>
           <p className="text-gray-600 dark:text-gray-400 text-sm">Crafting digital experiences that inspire and convert.</p>
           <div className="flex justify-center md:justify-start space-x-4 mt-6">
-            <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors"><Facebook className="h-6 w-6" /></a>
+            <a href="https://www.facebook.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors"><Facebook className="h-6 w-6" /></a>
             <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors"><Twitter className="h-6 w-6" /></a>
             <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors"><Linkedin className="h-6 w-6" /></a>
-            <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors"><Instagram className="h-6 w-6" /></a>
+            <a href="https://www.instagram.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors"><Instagram className="h-6 w-6" /></a>
           </div>
         </div>
 

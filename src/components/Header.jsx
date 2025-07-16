@@ -67,7 +67,7 @@ const Header = () => {
         </div>
         {/* New social icons and Get in Touch button */}
         <div className="hidden md:flex items-center space-x-4 animate-slide-in-right delay-500">
-          <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
+          <a href="https://www.facebook.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
             <Facebook className="h-5 w-5" />
           </a>
           <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
@@ -76,7 +76,7 @@ const Header = () => {
           <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
             <Linkedin className="h-5 w-5" />
           </a>
-          <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
+          <a href="https://www.instagram.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
             <Instagram className="h-5 w-5" />
           </a>
           <Link to="/contact">
@@ -104,7 +104,7 @@ const Header = () => {
                 <Link to="/contact" className="hover:text-primary dark:hover:text-primary-foreground">Contact</Link>
                 {/* Social icons and Get in Touch button for mobile */}
                 <div className="flex justify-center space-x-6 mt-8 pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
+                  <a href="https://www.facebook.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
                     <Facebook className="h-7 w-7" />
                   </a>
                   <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
@@ -113,7 +113,7 @@ const Header = () => {
                   <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
                     <Linkedin className="h-7 w-7" />
                   </a>
-                  <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
+                  <a href="https://www.instagram.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
                     <Instagram className="h-7 w-7" />
                   </a>
                 </div>
