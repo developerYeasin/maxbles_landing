@@ -68,7 +68,7 @@ const HeroSection = () => {
           <div className="md:w-7/12 flex justify-center items-center">
             <div 
                 ref={imageWrapperRef}
-                className="relative w-full gradient-border-wrapper" {/* Removed max-w-xl */}
+                className="relative w-full gradient-border-wrapper"
                 style={{ transformStyle: 'preserve-3d' }}
             >
                 <img 
