@@ -30,7 +30,7 @@ const TestimonialsSection = ({ className }) => {
     return (
       <section id="testimonials" className={cn("py-20 bg-white/80 dark:bg-gray-800/80", className)}>
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">What Our Clients Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">What Our Clients Say</h2>
           <p className="text-gray-700 dark:text-gray-300">Loading latest testimonials...</p>
         </div>
       </section>
@@ -41,7 +41,7 @@ const TestimonialsSection = ({ className }) => {
     return (
       <section id="testimonials" className={cn("py-20 bg-white/80 dark:bg-gray-800/80", className)}>
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">What Our Clients Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">What Our Clients Say</h2>
           <p className="text-red-500">{error}</p>
         </div>
       </section>
@@ -51,7 +51,7 @@ const TestimonialsSection = ({ className }) => {
   return (
     <section id="testimonials" className={cn("py-20 bg-white/80 dark:bg-gray-800/80", className)}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">What Our Clients Say</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">What Our Clients Say</h2>
         {testimonials.length > 0 ? (
           <Carousel
             options={{ loop: true, align: 'start' }}

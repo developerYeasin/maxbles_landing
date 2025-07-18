@@ -50,7 +50,7 @@ const ServicesSection = ({ className }) => {
   return (
     <section id="services" className={cn("py-20 bg-gray-50/80 dark:bg-gray-900/80", className)}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">Our Services</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">Our Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <Card key={index} className={`text-center p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 hover:shadow-lg hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-2 animate-zoom-in delay-${index * 100} group transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105`}>

@@ -7,7 +7,7 @@ const AboutSection = ({ className }) => {
   return (
     <section id="about" className={cn("py-20 bg-white/80 dark:bg-gray-800/80", className)}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">About Maxbles</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient-primary animate-fade-in-up">About Maxbles</h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-in-left delay-200">
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">

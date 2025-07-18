@@ -47,7 +47,7 @@ const HeroSection = () => {
             <p className="text-gradient-primary font-bold tracking-wider mb-3 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               DIGITAL CONSULTING AGENCY
             </p>
-            <h1 className="text-4xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-5 leading-tight animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <h1 className="text-3xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-5 leading-tight animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               Unique Business Consulting.
             </h1>
             <p className="text-gray-600 dark:text-gray-300 mb-10 text-lg animate-fade-in-up" style={{ animationDelay: '0.6s' }}>

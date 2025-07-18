@@ -72,7 +72,7 @@ const BlogPostPage = () => {
       <main className="flex-grow container mx-auto px-4 py-20">
         <article className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-lg border border-primary/20 dark:border-primary/50 animate-fade-in-up">
           <img src={post.image} alt={post.title} className="w-full h-64 object-cover rounded-lg mb-8 shadow-md" />
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gradient-primary mb-4 leading-tight">{post.title}</h1>
+          <h1 className="text-3xl md:text-5xl font-extrabold text-gradient-primary mb-4 leading-tight">{post.title}</h1>
           <p className="text-gray-600 dark:text-gray-400 text-md mb-6">
             By <span className="font-semibold text-primary dark:text-primary-foreground">{post.author}</span> on {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} &bull; {post.readTime}
           </p>
