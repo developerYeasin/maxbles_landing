@@ -39,9 +39,9 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="hero" className="flex items-center justify-center min-h-[calc(100vh-4rem)] px-4 py-8 md:py-12 lg:py-20"> {/* Adjusted min-height and vertical padding */}
+    <section id="hero" className="flex items-center justify-center min-h-[calc(100vh-4rem)] py-6 md:py-12 lg:py-20"> {/* Removed px-4, adjusted py */}
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 bg-white/80 dark:bg-gray-900/80 p-4 md:p-8 lg:p-20 rounded-3xl shadow-lg overflow-hidden animate-fade-in-up"> {/* Adjusted inner padding */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 bg-white/80 dark:bg-gray-900/80 p-3 md:p-8 lg:p-20 rounded-3xl shadow-lg overflow-hidden animate-fade-in-up"> {/* Adjusted p and gap */}
           {/* Text Content Section */}
           <div className="md:w-5/12 text-center md:text-left">
             <p className="text-gradient-primary font-bold tracking-wider mb-3 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>

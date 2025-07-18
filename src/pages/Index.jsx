@@ -20,7 +20,7 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <HeroSection />
-        <section className="py-12 md:py-20 bg-white/80 dark:bg-gray-800/80 text-center relative z-10"> {/* Adjusted vertical padding */}
+        <section className="py-8 md:py-20 bg-white/80 dark:bg-gray-800/80 text-center relative z-10"> {/* Adjusted vertical padding, removed px-4 */}
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-6 animate-fade-in-up">
               Your Vision, Our Digital Expertise
