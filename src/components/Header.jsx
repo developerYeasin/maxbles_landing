@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react'; // Import useState
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, ChevronDown, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react'; // Import social icons
@@ -13,6 +13,9 @@ import {
 import GradientButton from './GradientButton.jsx'; // Import GradientButton
 
 const Header = () => {
+  const [isPagesDropdownOpen, setIsPagesDropdownOpen] = useState(false);
+  const [isPortfolioDropdownOpen, setIsPortfolioDropdownOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md supports-[backdrop-filter]:bg-white/60 dark:border-gray-800 dark:bg-gray-950/80 dark:supports-[backdrop-filter]:bg-gray-950/60 shadow-sm">
       <div className="container flex h-16 items-center justify-between">
@@ -26,12 +29,20 @@ const Header = () => {
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
             </Link>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center relative group transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-200">
+            <DropdownMenu open={isPagesDropdownOpen} onOpenChange={setIsPagesDropdownOpen}>
+              <DropdownMenuTrigger 
+                className="flex items-center relative group transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-200"
+                onMouseEnter={() => setIsPagesDropdownOpen(true)}
+                onMouseLeave={() => setIsPagesDropdownOpen(false)}
+              >
                 Pages <ChevronDown className="ml-1 h-4 w-4" />
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-48 bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700">
+              <DropdownMenuContent 
+                className="w-48 bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700"
+                onMouseEnter={() => setIsPagesDropdownOpen(true)}
+                onMouseLeave={() => setIsPagesDropdownOpen(false)}
+              >
                 <DropdownMenuItem asChild>
                   <Link to="/about" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">About Us</Link>
                 </DropdownMenuItem>
@@ -47,12 +58,20 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center relative group transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-300">
+            <DropdownMenu open={isPortfolioDropdownOpen} onOpenChange={setIsPortfolioDropdownOpen}>
+              <DropdownMenuTrigger 
+                className="flex items-center relative group transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-300"
+                onMouseEnter={() => setIsPortfolioDropdownOpen(true)}
+                onMouseLeave={() => setIsPortfolioDropdownOpen(false)}
+              >
                 Portfolio <ChevronDown className="ml-1 h-4 w-4" />
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-48 bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700">
+              <DropdownMenuContent 
+                className="w-48 bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700"
+                onMouseEnter={() => setIsPortfolioDropdownOpen(true)}
+                onMouseLeave={() => setIsPortfolioDropdownOpen(false)}
+              >
                 <DropdownMenuItem asChild>
                   <Link to="/portfolio" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">All Projects</Link>
                 </DropdownMenuItem>
