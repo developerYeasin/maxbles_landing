@@ -57,20 +57,26 @@ const BlogSection = ({ className }) => {
           <Carousel 
             options={{ loop: true, align: 'start' }} 
             className="py-4"
-            slideClassName="w-full sm:w-1/2 lg:w-1/3" // Adjust slide width for responsiveness
+            slideClassName="w-full sm:w-1/2 lg:w-1/3 flex" // Added flex to slideClassName
           >
             {blogPosts.map((post, index) => (
-              <Card key={post.id || index} className={`overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 hover:shadow-lg transition-shadow duration-300 animate-fade-in-up delay-${index * 100} hover:shadow-xl hover:border-primary transition-all duration-300 transform hover:-translate-y-1`}>
+              <Card key={post.id || index} className={`overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 hover:shadow-lg transition-shadow duration-300 animate-fade-in-up delay-${index * 100} hover:shadow-xl hover:border-primary transition-all duration-300 transform hover:-translate-y-1 h-full flex flex-col`}> {/* Added h-full and flex flex-col */}
                 <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
                 <CardHeader className="pb-2">
                   <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">{post.title}</CardTitle>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center justify-between">
+                    <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                    <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{post.readTime}</span>
+                  </p>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{post.excerpt}</p>
-                  <Link to={`/blog/${post.slug}`}>
-                    <Button variant="link" className="p-0 h-auto text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Read More</Button>
-                  </Link>
+                <CardContent className="flex flex-col flex-grow"> {/* Added flex flex-col and flex-grow */}
+                  <div className="text-gray-600 dark:text-gray-300 mb-4 flex-grow" dangerouslySetInnerHTML={{ __html: post.excerpt }}></div> {/* Added flex-grow */}
+                  <div className="flex justify-between items-center mt-auto"> {/* Added mt-auto to push to bottom */}
+                    <span className="text-sm text-gray-600 dark:text-gray-400">By {post.author}</span>
+                    <Link to={`/blog/${post.slug}`}>
+                      <Button variant="link" className="p-0 h-auto text-primary hover:text-accent dark:text-primary-foreground dark:hover:text-accent-foreground">Read More</Button>
+                    </Link>
+                  </div>
                 </CardContent>
               </Card>
             ))}
