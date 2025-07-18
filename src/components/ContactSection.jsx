@@ -58,15 +58,15 @@ const ContactSection = () => {
             <div className="space-y-4">
               <div className="flex items-center text-gray-700 dark:text-gray-300">
                 <Mail className="h-6 w-6 text-blue-500 mr-3" />
-                <span>info@maxbles.com</span>
+                <span>maxblesdigital@gmail.com</span>
               </div>
               <div className="flex items-center text-gray-700 dark:text-gray-300">
                 <Phone className="h-6 w-6 text-blue-500 mr-3" />
-                <span>+1 (123) 456-7890</span>
+                <span>+8801576-743443</span>
               </div>
               <div className="flex items-center text-gray-700 dark:text-gray-300">
                 <MapPin className="h-6 w-6 text-blue-500 mr-3" />
-                <span>123 Creative Lane, Digital City, World</span>
+                <span>Kazla, Matihar, Rajshahi, Bangladesh</span>
               </div>
             </div>
             <div className="mt-8">

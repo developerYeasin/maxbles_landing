@@ -37,13 +37,13 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">Contact Info</h3>
           <ul className="space-y-2 text-gray-600 dark:text-gray-400">
             <li className="flex items-center justify-center md:justify-start">
-              <Mail className="h-4 w-4 mr-2 text-primary" /> info@maxbles.com
+              <Mail className="h-4 w-4 mr-2 text-primary" /> maxblesdigital@gmail.com
             </li>
             <li className="flex items-center justify-center md:justify-start">
-              <Phone className="h-4 w-4 mr-2 text-primary" /> +1 (123) 456-7890
+              <Phone className="h-4 w-4 mr-2 text-primary" /> +8801576-743443
             </li>
             <li className="flex items-start justify-center md:justify-start">
-              <MapPin className="h-4 w-4 mr-2 text-primary mt-1" /> 123 Creative Lane, Digital City, World
+              <MapPin className="h-4 w-4 mr-2 text-primary mt-1" /> Kazla, Matihar, Rajshahi, Bangladesh
             </li>
           </ul>
         </div>

@@ -70,15 +70,15 @@ const ContactPage = () => {
             <div className="space-y-6">
               <div className="flex items-center text-gray-700 dark:text-gray-300 text-lg">
                 <Mail className="h-7 w-7 text-primary mr-4" />
-                <span>info@maxbles.com</span>
+                <span>maxblesdigital@gmail.com</span>
               </div>
               <div className="flex items-center text-gray-700 dark:text-gray-300 text-lg">
                 <Phone className="h-7 w-7 text-primary mr-4" />
-                <span>+1 (123) 456-7890</span>
+                <span>+8801576-743443</span>
               </div>
               <div className="flex items-center text-gray-700 dark:text-gray-300 text-lg">
                 <MapPin className="h-7 w-7 text-primary mr-4" />
-                <span>123 Creative Lane, Digital City, World</span>
+                <span>Kazla, Matihar, Rajshahi, Bangladesh</span>
               </div>
             </div>
             <div className="mt-12">
