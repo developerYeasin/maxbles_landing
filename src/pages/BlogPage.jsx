@@ -8,7 +8,7 @@ import { fetchBlogPosts } from '@/lib/api.js'; // Import the API function
 
 const BlogPage = () => {
   const [blogPosts, setBlogPosts] = useState([]);
-  const [loading, setLoading] = true);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
