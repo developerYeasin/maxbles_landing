@@ -5,6 +5,7 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import { Link } from 'react-router-dom';
 import { fetchBlogPosts } from '@/lib/api.js'; // Import the API function
+import { truncateText } from '@/lib/textUtils.js'; // Import truncateText
 
 const BlogPage = () => {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -69,7 +70,7 @@ const BlogPage = () => {
                 </CardHeader>
                 <CardContent>
                   {/* Render excerpt as HTML */}
-                  <div className="text-gray-600 dark:text-gray-300 mb-4" dangerouslySetInnerHTML={{ __html: post.excerpt }}></div>
+                  <div className="text-gray-600 dark:text-gray-300 mb-4" dangerouslySetInnerHTML={{ __html: truncateText(post.excerpt, 120) }}></div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-600 dark:text-gray-400">By {post.author}</span>
                     <Link to={`/blog/${post.slug}`}>

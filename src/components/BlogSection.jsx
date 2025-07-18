@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils.js";
 import Carousel from './Carousel.jsx';
 import { Link } from 'react-router-dom';
 import { fetchBlogPosts } from '@/lib/api.js'; // Import the API function
+import { truncateText } from '@/lib/textUtils.js'; // Import truncateText
 
 const BlogSection = ({ className }) => {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -70,7 +71,7 @@ const BlogSection = ({ className }) => {
                   </p>
                 </CardHeader>
                 <CardContent className="flex flex-col flex-grow"> {/* Added flex flex-col and flex-grow */}
-                  <div className="text-gray-600 dark:text-gray-300 mb-4 flex-grow" dangerouslySetInnerHTML={{ __html: post.excerpt }}></div> {/* Added flex-grow */}
+                  <div className="text-gray-600 dark:text-gray-300 mb-4 flex-grow" dangerouslySetInnerHTML={{ __html: truncateText(post.excerpt, 120) }}></div> {/* Added flex-grow */}
                   <div className="flex justify-between items-center mt-auto"> {/* Added mt-auto to push to bottom */}
                     <span className="text-sm text-gray-600 dark:text-gray-400">By {post.author}</span>
                     <Link to={`/blog/${post.slug}`}>

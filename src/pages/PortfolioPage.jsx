@@ -4,6 +4,7 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import { Link } from 'react-router-dom';
 import { fetchPortfolioItems } from '@/lib/api.js'; // Import the API function
+import { truncateText } from '@/lib/textUtils.js'; // Import truncateText
 
 const PortfolioPage = () => {
   const [portfolioItems, setPortfolioItems] = useState([]);
@@ -66,7 +67,7 @@ const PortfolioPage = () => {
                         <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
                         <p className="text-sm mb-3 opacity-90">{item.category}</p>
                         {/* Render description as HTML */}
-                        <div className="text-base opacity-90 mb-4" dangerouslySetInnerHTML={{ __html: item.description }}></div>
+                        <div className="text-base opacity-90 mb-4" dangerouslySetInnerHTML={{ __html: truncateText(item.description, 120) }}></div>
                         <div className="flex flex-wrap justify-center gap-2">
                           {item.tags && item.tags.map((tag, tagIndex) => (
                             <span key={tagIndex} className="bg-white text-primary text-xs px-3 py-1 rounded-full font-medium">
