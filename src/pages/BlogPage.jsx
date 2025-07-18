@@ -40,7 +40,6 @@ const BlogPage = () => {
         <p className="text-xl text-red-500">{error}</p>
       </div>
     );
-  );
   }
 
   return (
