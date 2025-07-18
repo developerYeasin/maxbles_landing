@@ -41,7 +41,7 @@ const HeroSection = () => {
   return (
     <section id="hero" className="flex items-center justify-center min-h-[70vh] md:min-h-[calc(100vh-4rem)] py-6 md:py-12 lg:py-16"> {/* Adjusted lg:py for desktop */}
       <div className="container mx-auto lg:px-24"> {/* Added lg:px-24 for more desktop side padding */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 bg-white/80 dark:bg-gray-900/80 p-4 sm:p-6 md:p-8 lg:p-20 rounded-3xl shadow-lg overflow-hidden animate-fade-in-up"> {/* Adjusted p and gap */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 bg-white/80 dark:bg-gray-900/80 p-4 sm:p-6 md:p-6 lg:p-20 rounded-3xl shadow-lg overflow-hidden animate-fade-in-up"> {/* Adjusted md:p to md:p-6 */}
           {/* Text Content Section */}
           <div className="md:w-5/12 text-center md:text-left">
             <p className="text-gradient-primary font-bold tracking-wider mb-3 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
@@ -68,7 +68,7 @@ const HeroSection = () => {
           <div className="md:w-7/12 flex justify-center items-center">
             <div 
                 ref={imageWrapperRef}
-                className="relative w-full max-w-xl gradient-border-wrapper"
+                className="relative w-full gradient-border-wrapper" {/* Removed max-w-xl */}
                 style={{ transformStyle: 'preserve-3d' }}
             >
                 <img 
