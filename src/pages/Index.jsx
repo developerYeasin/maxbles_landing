@@ -20,8 +20,8 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <HeroSection />
-        <section className="py-8 md:py-20 bg-white/80 dark:bg-gray-800/80 text-center relative z-10"> {/* Adjusted vertical padding */}
-          <div className="container mx-auto px-4"> {/* Reverted sm:px-4 */}
+        <section className="py-8 md:py-16 bg-white/80 dark:bg-gray-800/80 text-center relative z-10"> {/* Adjusted md:py for desktop */}
+          <div className="container mx-auto px-4 lg:px-24"> {/* Added lg:px-24 for more desktop side padding */}
             <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-6 animate-fade-in-up">
               Your Vision, Our Digital Expertise
             </h2>
