@@ -67,7 +67,7 @@ const PortfolioSection = ({ className }) => {
                       <div className="text-white text-center p-4">
                         <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
                         <p className="text-sm mb-2">{item.category}</p>
-                        <p className="text-xs opacity-80 hidden group-hover:block transition-opacity duration-300">{item.description}</p>
+                        <div className="text-xs opacity-80 hidden group-hover:block transition-opacity duration-300" dangerouslySetInnerHTML={{ __html: item.description }}></div>
                       </div>
                     </div>
                   </div>
