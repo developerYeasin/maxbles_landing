@@ -40,6 +40,7 @@ const BlogPage = () => {
         <p className="text-xl text-red-500">{error}</p>
       </div>
     );
+  );
   }
 
   return (
@@ -68,7 +69,8 @@ const BlogPage = () => {
                   </p>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{post.excerpt}</p>
+                  {/* Render excerpt as HTML */}
+                  <div className="text-gray-600 dark:text-gray-300 mb-4" dangerouslySetInnerHTML={{ __html: post.excerpt }}></div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-600 dark:text-gray-400">By {post.author}</span>
                     <Link to={`/blog/${post.slug}`}>

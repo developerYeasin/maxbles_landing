@@ -63,7 +63,8 @@ const TestimonialsPage = () => {
                     <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
                     <AvatarFallback className="bg-primary/20 text-primary text-2xl font-bold">{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                   </Avatar>
-                  <p className="text-xl italic text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">"{testimonial.quote}"</p>
+                  {/* Render quote as HTML, removed hardcoded quotes */}
+                  <div className="text-xl italic text-gray-700 dark:text-gray-300 mb-4 leading-relaxed" dangerouslySetInnerHTML={{ __html: testimonial.quote }}></div>
                   <p className="font-bold text-primary dark:text-primary-foreground text-lg">{testimonial.name}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.title}</p>
                 </CardContent>

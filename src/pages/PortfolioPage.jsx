@@ -65,7 +65,8 @@ const PortfolioPage = () => {
                       <div className="text-white text-center p-4">
                         <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
                         <p className="text-sm mb-3 opacity-90">{item.category}</p>
-                        <p className="text-base opacity-90 mb-4">{item.description}</p>
+                        {/* Render description as HTML */}
+                        <div className="text-base opacity-90 mb-4" dangerouslySetInnerHTML={{ __html: item.description }}></div>
                         <div className="flex flex-wrap justify-center gap-2">
                           {item.tags && item.tags.map((tag, tagIndex) => (
                             <span key={tagIndex} className="bg-white text-primary text-xs px-3 py-1 rounded-full font-medium">
