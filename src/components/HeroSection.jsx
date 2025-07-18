@@ -39,7 +39,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="hero" className="flex items-center justify-center min-h-[70vh] md:min-h-[85vh] py-6 md:py-8 lg:py-16"> {/* Changed md:min-h-[calc(100vh-4rem)] to md:min-h-[85vh] */}
+    <section id="hero" className="flex items-center justify-center min-h-[70vh] md:min-h-[75vh] py-6 md:py-8 lg:py-16"> {/* Changed md:min-h-[85vh] to md:min-h-[75vh] */}
       <div className="container mx-auto lg:px-24"> {/* Added lg:px-24 for more desktop side padding */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 bg-white/80 dark:bg-gray-900/80 p-4 sm:p-6 md:p-6 lg:p-20 rounded-3xl shadow-lg overflow-hidden animate-fade-in-up"> {/* Adjusted md:p to md:p-6 */}
           {/* Text Content Section */}
