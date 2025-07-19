@@ -40,7 +40,7 @@ const PushNotificationButton = () => {
       const response = await fetch(`${PUSH_API_BASE_URL}/save-subscription`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify(subscription),
+        body: JSON.stringify(subscription), // <-- This is where the subscription object is sent
       });
 
       if (!response.ok) {
@@ -84,7 +84,7 @@ const PushNotificationButton = () => {
         applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY),
       });
 
-      console.log("Push Subscription:", subscription);
+      console.log("Push Subscription:", subscription); // You can inspect this in your browser console
       await sendSubscriptionToServer(subscription);
       setIsSubscribed(true);
       toast({
