@@ -78,7 +78,7 @@ const PushNotificationButton = () => {
       }
 
       const permission = await Notification.requestPermission();
-      console.log("Notification permission requested, result:", permission);
+      console.log("Notification permission requested, result:", permission); // Added this log
 
       if (permission === "granted") {
         const serviceWorker = await navigator.serviceWorker.ready;
