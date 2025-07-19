@@ -33,7 +33,14 @@ const PushNotificationButton = () => {
         registration.pushManager.getSubscription().then(subscription => {
           setIsSubscribed(!!subscription);
           console.log("Initial subscription status:", !!subscription ? "Subscribed" : "Not subscribed");
+          if (subscription) {
+            console.log("Existing subscription:", subscription);
+          }
+        }).catch(error => {
+          console.error("Error getting existing subscription:", error);
         });
+      }).catch(error => {
+        console.error("Service Worker not ready:", error);
       });
     } else {
       console.warn("Push notifications not supported by this browser.");
@@ -46,6 +53,7 @@ const PushNotificationButton = () => {
   }, []);
 
   const sendSubscriptionToServer = async (subscription) => {
+    console.log("Attempting to send subscription to server:", subscription);
     try {
       const response = await fetch(`${PUSH_API_BASE_URL}/save-subscription`, {
         method: "POST",
@@ -57,7 +65,9 @@ const PushNotificationButton = () => {
         const errorData = await response.json();
         throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
       }
-      return response.json();
+      const result = await response.json();
+      console.log("Subscription sent to server successfully:", result);
+      return result;
     } catch (error) {
       console.error("Error sending subscription to server:", error);
       throw error;
@@ -77,17 +87,21 @@ const PushNotificationButton = () => {
         return;
       }
 
+      console.log("Requesting notification permission...");
       const permission = await Notification.requestPermission();
-      console.log("Notification permission requested, result:", permission); // Added this log
+      console.log("Notification permission requested, result:", permission);
 
       if (permission === "granted") {
         const serviceWorker = await navigator.serviceWorker.ready;
+        console.log("Service Worker ready:", serviceWorker);
+
+        console.log("Attempting to subscribe to push notifications...");
         const subscription = await serviceWorker.pushManager.subscribe({
           userVisibleOnly: true,
           applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY),
         });
 
-        console.log("Push Subscription:", subscription);
+        console.log("Push Subscription created:", subscription);
         await sendSubscriptionToServer(subscription);
         setIsSubscribed(true);
         toast({
@@ -126,6 +140,7 @@ const PushNotificationButton = () => {
       const subscription = await serviceWorker.pushManager.getSubscription();
 
       if (subscription) {
+        console.log("Attempting to unsubscribe from push notifications:", subscription);
         await subscription.unsubscribe();
         // Optionally, send a request to your backend to remove the subscription
         // await fetch(`${PUSH_API_BASE_URL}/remove-subscription`, {
@@ -138,11 +153,13 @@ const PushNotificationButton = () => {
           title: "Unsubscribed!",
           description: "You will no longer receive push notifications.",
         });
+        console.log("Successfully unsubscribed.");
       } else {
         toast({
           title: "Not Subscribed",
           description: "You are not currently subscribed to notifications.",
         });
+        console.log("No active subscription found to unsubscribe.");
       }
     } catch (error) {
       console.error("Error unsubscribing:", error);
@@ -159,6 +176,7 @@ const PushNotificationButton = () => {
   const handleSendTestNotification = async () => {
     setIsLoading(true);
     try {
+      console.log("Attempting to send test notification...");
       const response = await fetch(`${PUSH_API_BASE_URL}/send-notification`, {
         method: "GET", // Or POST with specific data
         headers: { "Content-type": "application/json" },
@@ -171,6 +189,7 @@ const PushNotificationButton = () => {
         title: "Test Notification Sent!",
         description: "Check your notifications.",
       });
+      console.log("Test notification request sent successfully.");
     } catch (error) {
       console.error("Error sending test notification:", error);
       toast({
