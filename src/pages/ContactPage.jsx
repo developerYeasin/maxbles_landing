@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Linkedin, Instagram } from 'lucide-react'; // Removed Twitter
 import { toast } from "@/components/ui/use-toast";
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
@@ -88,8 +88,8 @@ const ContactPage = () => {
               </p>
               <div className="flex space-x-6 mt-4">
                 <a href="https://www.facebook.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent dark:text-primary-foreground dark:hover:text-accent-foreground transition-colors transform hover:scale-110"><Facebook className="h-8 w-8" /></a>
-                <a href="#" className="text-primary hover:text-accent dark:text-primary-foreground dark:hover:text-accent-foreground transition-colors transform hover:scale-110"><Twitter className="h-8 w-8" /></a>
-                <a href="#" className="text-primary hover:text-accent dark:text-primary-foreground dark:hover:text-accent-foreground transition-colors transform hover:scale-110"><Linkedin className="h-8 w-8" /></a>
+                {/* Removed Twitter link */}
+                <a href="https://www.linkedin.com/company/74510058" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent dark:text-primary-foreground dark:hover:text-accent-foreground transition-colors transform hover:scale-110"><Linkedin className="h-8 w-8" /></a>
                 <a href="https://www.instagram.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent dark:text-primary-foreground dark:hover:text-accent-foreground transition-colors transform hover:scale-110"><Instagram className="h-8 w-8" /></a>
               </div>
             </div>

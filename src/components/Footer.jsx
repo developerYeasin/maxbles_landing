@@ -1,7 +1,7 @@
 import React from 'react';
 import { MadeWithDyad } from "@/components/made-with-dyad.jsx";
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Linkedin, Instagram } from 'lucide-react'; // Removed Twitter
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import GradientButton from './GradientButton.jsx'; // Import GradientButton
@@ -17,8 +17,8 @@ const Footer = () => {
           <p className="text-gray-600 dark:text-gray-400 text-sm">Crafting digital experiences that inspire and convert.</p>
           <div className="flex justify-center md:justify-start space-x-4 mt-6">
             <a href="https://www.facebook.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors"><Facebook className="h-6 w-6" /></a>
-            <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors"><Twitter className="h-6 w-6" /></a>
-            <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors"><Linkedin className="h-6 w-6" /></a>
+            {/* Removed Twitter link */}
+            <a href="https://www.linkedin.com/company/74510058" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors"><Linkedin className="h-6 w-6" /></a>
             <a href="https://www.instagram.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors"><Instagram className="h-6 w-6" /></a>
           </div>
         </div>

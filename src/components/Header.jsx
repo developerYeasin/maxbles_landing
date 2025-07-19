@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; // Import useState
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, ChevronDown, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react'; // Import social icons
+import { Menu, ChevronDown, Facebook, Linkedin, Instagram } from 'lucide-react'; // Removed Twitter, Import social icons
 import { Link } from 'react-router-dom';
 import {
   DropdownMenu,
@@ -89,10 +89,8 @@ const Header = () => {
           <a href="https://www.facebook.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
             <Facebook className="h-5 w-5" />
           </a>
-          <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
-            <Twitter className="h-5 w-5" />
-          </a>
-          <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
+          {/* Removed Twitter link */}
+          <a href="https://www.linkedin.com/company/74510058" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
             <Linkedin className="h-5 w-5" />
           </a>
           <a href="https://www.instagram.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
@@ -126,10 +124,8 @@ const Header = () => {
                   <a href="https://www.facebook.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
                     <Facebook className="h-7 w-7" />
                   </a>
-                  <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
-                    <Twitter className="h-7 w-7" />
-                  </a>
-                  <a href="#" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
+                  {/* Removed Twitter link */}
+                  <a href="https://www.linkedin.com/company/74510058" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
                     <Linkedin className="h-7 w-7" />
                   </a>
                   <a href="https://www.instagram.com/maxblesdigital" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary-foreground transition-colors transform hover:scale-110">
