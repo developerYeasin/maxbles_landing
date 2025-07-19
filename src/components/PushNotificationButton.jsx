@@ -5,7 +5,9 @@ import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
 
 const VAPID_PUBLIC_KEY = import.meta.env.VITE_VAPID_PUBLIC_KEY || "BMn6MYpmYaYme5I53Q3cgivMcN5jrq719GMcQkdBreSXOQw1G4IgR34VlZx8Da_1I-DAtddq0ATNVrJl7AN_2oU";
-const PUSH_API_BASE_URL = import.meta.env.VITE_PUSH_API_BASE_URL || "http://localhost:8000";
+const PUSH_API_BASE_URL_RAW = import.meta.env.VITE_PUSH_API_BASE_URL || "http://localhost:8000";
+// Ensure PUSH_API_BASE_URL does not end with a slash
+const PUSH_API_BASE_URL = PUSH_API_BASE_URL_RAW.endsWith('/') ? PUSH_API_BASE_URL_RAW.slice(0, -1) : PUSH_API_BASE_URL_RAW;
 
 const urlBase64ToUint8Array = (base64String) => {
   const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
