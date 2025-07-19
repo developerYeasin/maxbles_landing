@@ -100,3 +100,16 @@ export const submitContactForm = async (formData) => {
     throw error;
   }
 };
+
+export const fetchLogos = async () => {
+  try {
+    const response = await fetch(`${API_BASE_URL}logos`); // Assuming your Node.js API has a /logos endpoint
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching logos:", error);
+    throw error;
+  }
+};
