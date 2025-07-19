@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
@@ -30,7 +32,15 @@ const PushNotificationButton = () => {
       navigator.serviceWorker.ready.then(registration => {
         registration.pushManager.getSubscription().then(subscription => {
           setIsSubscribed(!!subscription);
+          console.log("Initial subscription status:", !!subscription ? "Subscribed" : "Not subscribed");
         });
+      });
+    } else {
+      console.warn("Push notifications not supported by this browser.");
+      toast({
+        title: "Browser Not Supported",
+        description: "Your browser does not support push notifications. Please try Chrome, Firefox, or Edge.",
+        variant: "destructive",
       });
     }
   }, []);
@@ -40,7 +50,7 @@ const PushNotificationButton = () => {
       const response = await fetch(`${PUSH_API_BASE_URL}/save-subscription`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify(subscription), // <-- This is where the subscription object is sent
+        body: JSON.stringify(subscription),
       });
 
       if (!response.ok) {
@@ -59,8 +69,8 @@ const PushNotificationButton = () => {
     try {
       if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
         toast({
-          title: "Push notifications not supported",
-          description: "Your browser does not support push notifications.",
+          title: "Browser Not Supported",
+          description: "Your browser does not support push notifications. Please try Chrome, Firefox, or Edge.",
           variant: "destructive",
         });
         setIsLoading(false);
@@ -68,34 +78,40 @@ const PushNotificationButton = () => {
       }
 
       const permission = await Notification.requestPermission();
-      if (permission !== "granted") {
+      console.log("Notification permission requested, result:", permission);
+
+      if (permission === "granted") {
+        const serviceWorker = await navigator.serviceWorker.ready;
+        const subscription = await serviceWorker.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY),
+        });
+
+        console.log("Push Subscription:", subscription);
+        await sendSubscriptionToServer(subscription);
+        setIsSubscribed(true);
+        toast({
+          title: "Subscribed!",
+          description: "You will now receive push notifications.",
+        });
+      } else if (permission === "denied") {
         toast({
           title: "Permission Denied",
-          description: "Notification permission was not granted.",
+          description: "Notification permission was denied. Please enable it in your browser settings if you wish to receive notifications.",
           variant: "destructive",
         });
-        setIsLoading(false);
-        return;
+      } else { // 'default' or other unexpected states
+        toast({
+          title: "Permission Required",
+          description: "Please allow notification permission when prompted by your browser.",
+          variant: "destructive",
+        });
       }
-
-      const serviceWorker = await navigator.serviceWorker.ready;
-      const subscription = await serviceWorker.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY),
-      });
-
-      console.log("Push Subscription:", subscription); // You can inspect this in your browser console
-      await sendSubscriptionToServer(subscription);
-      setIsSubscribed(true);
-      toast({
-        title: "Subscribed!",
-        description: "You will now receive push notifications.",
-      });
     } catch (error) {
       console.error("Error subscribing to push notifications:", error);
       toast({
         title: "Subscription Failed",
-        description: error.message || "Could not subscribe to push notifications.",
+        description: error.message || "Could not subscribe to push notifications. Ensure your VAPID key is correct and your backend is running.",
         variant: "destructive",
       });
     } finally {
@@ -122,6 +138,11 @@ const PushNotificationButton = () => {
           title: "Unsubscribed!",
           description: "You will no longer receive push notifications.",
         });
+      } else {
+        toast({
+          title: "Not Subscribed",
+          description: "You are not currently subscribed to notifications.",
+        });
       }
     } catch (error) {
       console.error("Error unsubscribing:", error);
@@ -135,8 +156,6 @@ const PushNotificationButton = () => {
     }
   };
 
-  // This button is for testing sending a notification from the client (if your backend supports it)
-  // In a real app, notifications are usually sent from the server.
   const handleSendTestNotification = async () => {
     setIsLoading(true);
     try {
@@ -156,7 +175,7 @@ const PushNotificationButton = () => {
       console.error("Error sending test notification:", error);
       toast({
         title: "Test Notification Failed",
-        description: error.message || "Could not send test notification.",
+        description: error.message || "Could not send test notification. Ensure your backend is running and configured to send.",
         variant: "destructive",
       });
     } finally {
