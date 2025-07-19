@@ -12,7 +12,7 @@ import BlogSection from '@/components/BlogSection.jsx';
 import GradientButton from '@/components/GradientButton.jsx';
 import MarqueeSection from '@/components/MarqueeSection.jsx';
 import BackgroundVideo from '@/components/BackgroundVideo.jsx'; // Import the new component
-import PushNotificationButton from '@/components/PushNotificationButton.jsx'; // Import the new component
+// import PushNotificationButton from '@/components/PushNotificationButton.jsx'; // Removed import
 
 const Index = () => {
   return (
@@ -50,9 +50,7 @@ const Index = () => {
         <PortfolioSection />
         <TestimonialsSection />
         <BlogSection />
-        <section className="py-12 bg-white/80 dark:bg-gray-800/80 text-center relative z-10">
-          <PushNotificationButton />
-        </section>
+        {/* Removed PushNotificationButton section */}
       </main>
       <Footer />
     </div>
