@@ -70,9 +70,9 @@ const BlogPostPage = () => {
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
       <Header />
       <main className="flex-grow w-full px-4 md:px-8 lg:px-16 py-20">
-        <article className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-lg border border-primary/20 dark:border-primary/50 animate-fade-in-up">
+        <article className="w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-lg border border-primary/20 dark:border-primary/50 animate-fade-in-up">
           <div className="mb-8 rounded-lg overflow-hidden">
-            <img src={post.image} alt={post.title} className="w-full h-[500px] object-contain" />
+            <img src={post.image} alt={post.title} className="w-full h-[500px] object-cover" />
           </div>
           <h1 className="text-3xl md:text-5xl font-extrabold text-gradient-primary mb-4 leading-tight">{post.title}</h1>
           <p className="text-gray-600 dark:text-gray-400 text-md mb-6">
