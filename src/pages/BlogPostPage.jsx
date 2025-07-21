@@ -71,7 +71,7 @@ const BlogPostPage = () => {
       <Header />
       <main className="flex-grow w-full px-4 md:px-8 lg:px-16 py-20">
         <article className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-lg border border-primary/20 dark:border-primary/50 animate-fade-in-up">
-          <div className="w-full max-w-4xl mx-auto mb-8 shadow-md rounded-lg overflow-hidden">
+          <div className="w-full max-w-4xl mx-auto mb-8 rounded-lg overflow-hidden">
             <img src={post.image} alt={post.title} className="w-full h-[500px] object-contain" />
           </div>
           <h1 className="text-3xl md:text-5xl font-extrabold text-gradient-primary mb-4 leading-tight">{post.title}</h1>
