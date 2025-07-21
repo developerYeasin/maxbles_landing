@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } => 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils.js";
@@ -58,7 +58,7 @@ const BlogSection = ({ className }) => {
           <Carousel 
             options={{ loop: true, align: 'start' }} 
             className="py-4"
-            slideClassName="w-full lg:w-1/2 flex" // Changed to w-full on smaller screens, lg:w-1/2 on large screens
+            slideClassName="w-full sm:w-1/2 lg:w-1/3 flex" // Adjusted to show 3 cards per row on large screens
           >
             {blogPosts.map((post, index) => (
               <Card key={post.id || index} className={`overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 hover:shadow-lg transition-shadow duration-300 animate-fade-in-up delay-${index * 100} hover:shadow-xl hover:border-primary transition-all duration-300 transform hover:-translate-y-1 h-full flex flex-col`}> {/* Added h-full and flex flex-col */}
