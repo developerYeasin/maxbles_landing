@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
 
 const VAPID_PUBLIC_KEY = import.meta.env.VITE_VAPID_PUBLIC_KEY || "BMn6MYpmYaYme5I53Q3cgivMcN5jrq719GMcQkdBreSXOQw1G4IgR34VlZx8Da_1I-DAtddq0ATNVrJl7AN_2oU";
-const PUSH_API_BASE_URL_RAW = "https://backend.maxblesdigital.com";
+const PUSH_API_BASE_URL_RAW = "https://backend.maxblesdigital.com/api";
 // Ensure PUSH_API_BASE_URL does not end with a slash
 const PUSH_API_BASE_URL = PUSH_API_BASE_URL_RAW.endsWith('/') ? PUSH_API_BASE_URL_RAW.slice(0, -1) : PUSH_API_BASE_URL_RAW;
 

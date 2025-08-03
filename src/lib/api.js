@@ -2,7 +2,7 @@
 // Production/Live API Base URL: https://backend.maxblesdigital.com/
 
 // Use environment variable for API_BASE_URL, defaulting to the production URL
-const API_BASE_URL_RAW = 'https://backend.maxblesdigital.com';
+const API_BASE_URL_RAW = 'https://backend.maxblesdigital.com/api';
 // Ensure API_BASE_URL does not end with a slash
 const API_BASE_URL = API_BASE_URL_RAW.endsWith('/') ? API_BASE_URL_RAW.slice(0, -1) : API_BASE_URL_RAW;
 
