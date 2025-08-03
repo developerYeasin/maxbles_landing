@@ -21,7 +21,7 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="mr-6 flex items-center space-x-2 animate-slide-in-left">
-            <img src="https://maxblesdigital.com/wp-content/uploads/2025/07/maxbles-final-color-1-1536x354.png" alt="Maxbles Logo" className="h-9 w-auto" />
+            <img src="https://res.cloudinary.com/dbk7ixyvd/image/upload/v1754242560/maxbles-final-color-1-1536x354_xadpkb.png" alt="Maxbles Logo" className="h-9 w-auto" />
           </Link>
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-600 dark:text-gray-300">
             <Link to="/" className="relative group transition-colors hover:text-primary dark:hover:text-primary-foreground animate-fade-in-up delay-100">

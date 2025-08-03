@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
         <div className="animate-fade-in-up">
           <Link to="/">
-            <img src="https://maxblesdigital.com/wp-content/uploads/2025/07/maxbles-final-color-1-1536x354.png" alt="Maxbles Logo" className="h-10 w-auto mx-auto md:mx-0 mb-4" />
+            <img src="https://res.cloudinary.com/dbk7ixyvd/image/upload/v1754242560/maxbles-final-color-1-1536x354_xadpkb.png" alt="Maxbles Logo" className="h-10 w-auto mx-auto md:mx-0 mb-4" />
           </Link>
           <p className="text-gray-600 dark:text-gray-400 text-sm">Crafting digital experiences that inspire and convert.</p>
           <div className="flex justify-center md:justify-start space-x-4 mt-6">
