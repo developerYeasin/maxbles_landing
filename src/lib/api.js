@@ -1,8 +1,8 @@
 // Old local API Base URL (commented out for reference): http://localhost:3034/api
-// Production/Live API Base URL: https://maxbles-server.onrender.com/api/
+// Production/Live API Base URL: https://backend.maxblesdigital.com/
 
 // Use environment variable for API_BASE_URL, defaulting to the production URL
-const API_BASE_URL_RAW = import.meta.env.VITE_API_BASE_URL || 'https://maxbles-server.onrender.com/api';
+const API_BASE_URL_RAW = import.meta.env.VITE_API_BASE_URL || 'https://backend.maxblesdigital.com';
 // Ensure API_BASE_URL does not end with a slash
 const API_BASE_URL = API_BASE_URL_RAW.endsWith('/') ? API_BASE_URL_RAW.slice(0, -1) : API_BASE_URL_RAW;
 
