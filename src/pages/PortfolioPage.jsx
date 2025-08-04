@@ -55,13 +55,13 @@ const PortfolioPage = () => {
           </p>
         </section>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {portfolioItems.length > 0 ? (
             portfolioItems.map((item, index) => (
               <Card key={item.id || index} className={`overflow-hidden shadow-lg border border-primary/20 dark:border-primary/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm group animate-scale-in delay-${index * 100}`}>
                 <Link to={`/portfolio/${item.slug}`}>
                   <div className="relative overflow-hidden">
-                    <img src={item.image} alt={item.title} className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <img src={item.image} alt={item.title} className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-primary/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
                       <div className="text-white text-center p-4">
                         <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
@@ -79,7 +79,7 @@ const PortfolioPage = () => {
                     </div>
                   </div>
                 </Link>
-                <CardContent className="p-4">
+                <CardContent className="p-6">
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{item.title}</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{item.category}</p>
                 </CardContent>
