@@ -145,7 +145,7 @@ const PortfolioItemPage = () => {
           {item.live_url && isEmbeddable(item.live_url) && (
             <div className="mt-10 mb-8">
               <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Live Website Preview:</h3>
-              <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden shadow-xl border border-primary/30 dark:border-primary/60"> {/* 16:9 Aspect Ratio */}
+              <div className="relative w-full pt-[100%] md:pt-[75%] lg:pt-[56.25%] rounded-lg overflow-hidden shadow-xl border border-primary/30 dark:border-primary/60"> {/* Responsive Aspect Ratio */}
                 <iframe
                   src={item.live_url}
                   title={`${item.title} Live Preview`}
