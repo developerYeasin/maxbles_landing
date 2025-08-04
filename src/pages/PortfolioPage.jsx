@@ -45,7 +45,7 @@ const PortfolioPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
       <Header />
-      <main className="flex-grow container mx-auto px-4 py-20">
+      <main className="flex-grow container mx-auto py-20">
         <section className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-extrabold text-gradient-primary mb-6 animate-fade-in-up">
             Our Creative Showcase

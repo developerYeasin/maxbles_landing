@@ -9,7 +9,7 @@ import GradientButton from './GradientButton.jsx'; // Import GradientButton
 const Footer = () => {
   return (
     <footer className="bg-white dark:bg-gray-950 text-gray-700 dark:text-white py-12 border-t border-gray-200 dark:border-gray-800">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
         <div className="animate-fade-in-up">
           <Link to="/">
             <img src="https://res.cloudinary.com/dbk7ixyvd/image/upload/v1754242560/maxbles-final-color-1-1536x354_xadpkb.png" alt="Maxbles Logo" className="h-10 w-auto mx-auto md:mx-0 mb-4" />
@@ -57,7 +57,7 @@ const Footer = () => {
           </form>
         </div>
       </div>
-      <div className="container mx-auto px-4 text-center mt-12 border-t border-gray-200 dark:border-gray-800 pt-8">
+      <div className="container mx-auto text-center mt-12 border-t border-gray-200 dark:border-gray-800 pt-8">
         <p className="text-sm text-gray-500 animate-fade-in-up delay-400">
           &copy; {new Date().getFullYear()} Maxbles. All rights reserved.
         </p>

@@ -25,7 +25,7 @@ const MarqueeSection = ({ className }) => {
   if (loading) {
     return (
       <section className={cn("py-12 bg-gray-100/80 dark:bg-gray-900/80 overflow-hidden", className)}>
-        <div className="container mx-auto px-4 text-center mb-8">
+        <div className="container mx-auto text-center mb-8">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white animate-fade-in-up">
             Trusted by Leading Brands
           </h2>
@@ -38,7 +38,7 @@ const MarqueeSection = ({ className }) => {
   if (error) {
     return (
       <section className={cn("py-12 bg-gray-100/80 dark:bg-gray-900/80 overflow-hidden", className)}>
-        <div className="container mx-auto px-4 text-center mb-8">
+        <div className="container mx-auto text-center mb-8">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white animate-fade-in-up">
             Trusted by Leading Brands
           </h2>
@@ -51,7 +51,7 @@ const MarqueeSection = ({ className }) => {
   if (logos.length === 0) {
     return (
       <section className={cn("py-12 bg-gray-100/80 dark:bg-gray-900/80 overflow-hidden", className)}>
-        <div className="container mx-auto px-4 text-center mb-8">
+        <div className="container mx-auto text-center mb-8">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white animate-fade-in-up">
             Trusted by Leading Brands
           </h2>
@@ -63,7 +63,7 @@ const MarqueeSection = ({ className }) => {
 
   return (
     <section className={cn("py-12 bg-gray-100/80 dark:bg-gray-900/80 overflow-hidden", className)}>
-      <div className="container mx-auto px-4 text-center mb-8">
+      <div className="container mx-auto text-center mb-8">
         <h2 className="text-3xl font-bold text-gray-800 dark:text-white animate-fade-in-up">
           Trusted by Leading Brands
         </h2>
