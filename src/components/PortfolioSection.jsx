@@ -57,10 +57,10 @@ const PortfolioSection = ({ className }) => {
           <Carousel 
             options={{ loop: true, align: 'start' }} 
             className="py-4"
-            slideClassName="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4" // Adjust slide width for responsiveness
+            slideClassName="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 flex" // Added flex to ensure cards can stretch
           >
             {portfolioItems.map((item, index) => (
-              <Card key={item.id || index} className={`overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 group animate-scale-in delay-${index * 100} hover:shadow-xl hover:border-primary transition-all duration-300 transform hover:-translate-y-1`}>
+              <Card key={item.id || index} className={`overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 group animate-scale-in delay-${index * 100} hover:shadow-xl hover:border-primary transition-all duration-300 transform hover:-translate-y-1 h-full flex flex-col`}>
                 <Link to={`/portfolio/${item.slug}`}>
                   <div className="relative overflow-hidden">
                     <img src={item.image} alt={item.title} className="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105" />
@@ -73,7 +73,7 @@ const PortfolioSection = ({ className }) => {
                     </div>
                   </div>
                 </Link>
-                <CardContent className="p-4">
+                <CardContent className="p-4 flex-grow">
                   <h3 className="text-lg font-semibold text-gray-800 dark:text-white">{item.title}</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{item.category}</p>
                 </CardContent>
