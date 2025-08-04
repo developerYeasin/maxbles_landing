@@ -65,7 +65,7 @@ const TestimonialsSection = ({ className }) => {
                     <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
                     <AvatarFallback className="bg-blue-100 text-blue-600">{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                   </Avatar>
-                  <p className="text-lg italic text-gray-700 dark:text-gray-300 mb-4">"{testimonial.quote}"</p>
+                  <div className="text-lg italic text-gray-700 dark:text-gray-300 mb-4" dangerouslySetInnerHTML={{ __html: testimonial.quote }}></div>
                   <p className="font-semibold text-gray-800 dark:text-white">{testimonial.name}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.title}</p>
                 </CardContent>
