@@ -117,7 +117,7 @@ const PortfolioItemPage = () => {
             </div>
           )}
 
-          {(item.type === 'website' || item.type === 'mobile-app') && item.live_url && (
+          {(item.live_url || item.github_url) && (
             <div className="mb-8">
               <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Project Links:</h3>
               <div className="flex flex-wrap gap-4">
