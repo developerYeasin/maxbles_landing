@@ -87,7 +87,7 @@ const PortfolioItemPage = () => {
           <div className="mb-8 rounded-lg overflow-hidden">
             <img src={item.image} alt={item.title} className="w-full h-auto" />
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-gradient-primary mb-4 leading-tight">{item.title}</h1>
+          <h1 className="text-2xl md:text-4xl font-extrabold text-gradient-primary mb-4 leading-tight">{item.title}</h1>
           <p className="text-gray-600 dark:text-gray-400 text-md mb-6">
             Category: <span className="font-semibold text-primary dark:text-primary-foreground">{item.category}</span>
           </p>

@@ -74,7 +74,7 @@ const BlogPostPage = () => {
           <div className="mb-8 rounded-lg overflow-hidden">
             <img src={post.image} alt={post.title} className="w-full h-auto" />
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-gradient-primary mb-4 leading-tight">{post.title}</h1>
+          <h1 className="text-2xl md:text-4xl font-extrabold text-gradient-primary mb-4 leading-tight">{post.title}</h1>
           <p className="text-gray-600 dark:text-gray-400 text-md mb-6">
             By <span className="font-semibold text-primary dark:text-primary-foreground">{post.author}</span> on {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} &bull; {post.readTime}
           </p>
