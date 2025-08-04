@@ -60,7 +60,7 @@ const PortfolioItemPage = () => {
     return (
       <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
         <Header />
-        <main className="flex-grow w-full px-4 md:px-8 lg:px-16 py-20 text-center">
+        <main className="flex-grow container mx-auto py-20 text-center">
           <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">Portfolio Item Not Found</h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">The portfolio item you are looking for does not exist.</p>
           <Link to="/portfolio">
@@ -82,7 +82,7 @@ const PortfolioItemPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
       <Header />
-      <main className="flex-grow w-full px-4 md:px-8 lg:px-16 py-20">
+      <main className="flex-grow container mx-auto py-20">
         <article className="w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-lg border border-primary/20 dark:border-primary/50 animate-fade-in-up">
           <div className="mb-8 rounded-lg overflow-hidden">
             <img src={item.image} alt={item.title} className="w-full h-auto" />
