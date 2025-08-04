@@ -72,7 +72,7 @@ const BlogPostPage = () => {
       <main className="flex-grow container mx-auto py-20">
         <article className="w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-lg border border-primary/20 dark:border-primary/50 animate-fade-in-up">
           <div className="mb-8 rounded-lg overflow-hidden">
-            <img src={post.image} alt={post.title} className="w-full h-[500px] object-cover" />
+            <img src={post.image} alt={post.title} className="w-full h-auto" />
           </div>
           <h1 className="text-3xl md:text-5xl font-extrabold text-gradient-primary mb-4 leading-tight">{post.title}</h1>
           <p className="text-gray-600 dark:text-gray-400 text-md mb-6">
