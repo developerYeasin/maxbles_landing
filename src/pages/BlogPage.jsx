@@ -6,6 +6,7 @@ import Footer from '@/components/Footer.jsx';
 import { Link } from 'react-router-dom';
 import { fetchBlogPosts } from '@/lib/api.js'; // Import the API function
 import { truncateText } from '@/lib/textUtils.js'; // Import truncateText
+import PageMeta from '@/components/PageMeta.jsx';
 
 const BlogPage = () => {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -45,6 +46,10 @@ const BlogPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
+      <PageMeta 
+        title="Blog" 
+        description="Stay informed with the latest trends, expert advice, and insights from the Maxbles blog on web design, digital marketing, and technology." 
+      />
       <Header />
       <main className="flex-grow container mx-auto py-20">
         <section className="text-center mb-16">

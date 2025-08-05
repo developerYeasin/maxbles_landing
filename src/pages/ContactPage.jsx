@@ -9,6 +9,7 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import GradientButton from '@/components/GradientButton.jsx';
 import { submitContactForm } from '@/lib/api.js'; // Import the API function
+import PageMeta from '@/components/PageMeta.jsx';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -50,6 +51,10 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
+      <PageMeta 
+        title="Contact Us" 
+        description="Get in touch with the Maxbles team. Whether you have a project idea or a question, we're here to help you build something amazing." 
+      />
       <Header />
       <main className="flex-grow container mx-auto py-20">
         <section className="text-center mb-16">

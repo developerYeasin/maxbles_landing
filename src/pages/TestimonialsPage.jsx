@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import { fetchTestimonials } from '@/lib/api.js'; // Import the API function
+import PageMeta from '@/components/PageMeta.jsx';
 
 const TestimonialsPage = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -43,6 +44,10 @@ const TestimonialsPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
+      <PageMeta 
+        title="Testimonials" 
+        description="Read what our valued clients have to say about their experience with Maxbles and the exceptional results we've delivered for their businesses." 
+      />
       <Header />
       <main className="flex-grow container mx-auto py-20">
         <section className="text-center mb-16">

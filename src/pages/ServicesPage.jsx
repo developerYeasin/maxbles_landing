@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, Palette, Megaphone, Search, Layout, TrendingUp, ShieldCheck, Cloud, Database, Zap, BarChart2, Users2 } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
+import PageMeta from '@/components/PageMeta.jsx';
 
 const services = [
   {
@@ -70,6 +71,10 @@ const services = [
 const ServicesPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
+      <PageMeta 
+        title="Our Services" 
+        description="Explore the comprehensive digital services offered by Maxbles, including web development, UI/UX design, digital marketing, SEO, and more." 
+      />
       <Header />
       <main className="flex-grow container mx-auto py-20">
         <section className="text-center mb-16">

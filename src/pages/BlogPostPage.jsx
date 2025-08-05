@@ -5,6 +5,8 @@ import Footer from '@/components/Footer.jsx';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { fetchBlogPostBySlug } from '@/lib/api.js'; // Import the API function
+import PageMeta from '@/components/PageMeta.jsx';
+import { stripHtml } from '@/lib/textUtils.js';
 
 const BlogPostPage = () => {
   const { slug } = useParams();
@@ -38,6 +40,7 @@ const BlogPostPage = () => {
   if (error) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
+        <PageMeta title="Error" />
         <p className="text-xl text-red-500">{error}</p>
         <Link to="/blog" className="mt-4">
           <Button variant="outline" className="text-primary dark:text-primary-foreground border-primary dark:border-primary-foreground hover:bg-primary/10 dark:hover:bg-primary-foreground/10">
@@ -51,6 +54,7 @@ const BlogPostPage = () => {
   if (!post) {
     return (
       <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
+        <PageMeta title="Post Not Found" />
         <Header />
         <main className="flex-grow container mx-auto py-20 text-center">
           <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">Blog Post Not Found</h1>
@@ -66,8 +70,11 @@ const BlogPostPage = () => {
     );
   }
 
+  const metaDescription = post ? stripHtml(post.excerpt) : '';
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
+      <PageMeta title={post.title} description={metaDescription} />
       <Header />
       <main className="flex-grow container mx-auto py-20">
         <article className="w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-lg border border-primary/20 dark:border-primary/50 animate-fade-in-up">

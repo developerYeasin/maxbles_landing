@@ -3,10 +3,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Lightbulb, Users, Rocket, Award, Globe } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
+import PageMeta from '@/components/PageMeta.jsx';
 
 const AboutPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
+      <PageMeta 
+        title="About Us" 
+        description="Learn about Maxbles, our story, philosophy, and the expert team dedicated to innovating digital futures and driving client success." 
+      />
       <Header />
       <main className="flex-grow container mx-auto py-20">
         <section className="text-center mb-16">

@@ -5,6 +5,7 @@ import Footer from '@/components/Footer.jsx';
 import { Link } from 'react-router-dom';
 import { fetchPortfolioItems } from '@/lib/api.js'; // Import the API function
 import { truncateText } from '@/lib/textUtils.js'; // Import truncateText
+import PageMeta from '@/components/PageMeta.jsx';
 
 const PortfolioPage = () => {
   const [portfolioItems, setPortfolioItems] = useState([]);
@@ -44,6 +45,10 @@ const PortfolioPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
+      <PageMeta 
+        title="Our Portfolio" 
+        description="Browse our creative showcase of recent projects. See how Maxbles delivers innovation and success through expert design and development." 
+      />
       <Header />
       <main className="flex-grow container mx-auto py-20">
         <section className="text-center mb-16">
