@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
 
 @layer base {
   :root {
@@ -96,7 +96,7 @@
 
   body {
     @apply bg-background text-foreground;
-    /* Removed: cursor: none; */
+    font-family: 'Inter', sans-serif;
   }
 
   /* Custom Scrollbar Styles for Webkit browsers (Chrome, Safari, Edge) */
@@ -316,35 +316,4 @@
 
 .gradient-border-wrapper:hover::before {
   transform: rotate(-2deg) scale(1.05);
-}
-
-/* Removed Custom Cursor Styles */
-/*
-.custom-cursor-outer {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: radial-gradient(circle at center,
-    transparent 0%,
-    transparent 60%,
-    hsl(var(--primary)) 60%,
-    hsl(var(--accent)) 80%,
-    transparent 80%
-  );
-  filter: blur(0.5px);
-}
-
-.custom-cursor-inner {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: hsl(var(--primary));
-}
-*/
-
-/* Font import for Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
-
-body {
-    font-family: 'Inter', sans-serif;
 }
