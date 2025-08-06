@@ -1,9 +1,10 @@
 import React from 'react';
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Target, Eye, Handshake, Globe, Users } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import PageMeta from '@/components/PageMeta.jsx';
+import { cn } from '@/lib/utils.js';
 
 const teamMembers = [
   {
@@ -29,18 +30,24 @@ const infoCards = [
     title: "Our Mission",
     description:
       "To empower businesses with innovative digital solutions that drive growth, foster engagement, and create lasting value.",
+    borderColor: "border-t-blue-500",
+    textColor: "text-blue-500",
   },
   {
     icon: Eye,
     title: "Our Vision",
     description:
       "To be a leading digital agency recognized for our creativity, strategic thinking, and commitment to client success.",
+    borderColor: "border-t-purple-500",
+    textColor: "text-purple-500",
   },
   {
     icon: Handshake,
     title: "Our Values",
     description:
       "We believe in collaboration, integrity, and a passion for excellence in everything we do. Your success is our success.",
+    borderColor: "border-t-green-500",
+    textColor: "text-green-500",
   },
 ];
 
@@ -88,23 +95,24 @@ const AboutPage = () => {
               truly engage your audience.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-6 animate-slide-in-right delay-400">
+          <div className="grid grid-cols-1 gap-8 animate-slide-in-right delay-400">
             {infoCards.map((card, index) => (
               <Card
                 key={index}
-                className="bg-white/80 dark:bg-gray-900/80 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg hover:border-primary transition-all duration-300"
+                className={cn(
+                  "text-center p-6 bg-white dark:bg-gray-900 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 transform hover:-translate-y-1",
+                  card.borderColor
+                )}
               >
-                <CardHeader className="flex flex-row items-start gap-4">
-                  <card.icon className="h-8 w-8 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
-                      {card.title}
-                    </CardTitle>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      {card.description}
-                    </p>
-                  </div>
+                <CardHeader className="flex flex-col items-center p-0 pb-4">
+                  <card.icon className={cn("h-12 w-12 mb-4", card.textColor)} />
+                  <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">
+                    {card.title}
+                  </CardTitle>
                 </CardHeader>
+                <CardContent className="text-gray-600 dark:text-gray-400 p-0">
+                  {card.description}
+                </CardContent>
               </Card>
             ))}
           </div>
