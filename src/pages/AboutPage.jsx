@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Target, Eye, Handshake, Globe, Users, Lightbulb } from 'lucide-react';
+import { Target, Eye, Handshake, Globe, Users } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import PageMeta from '@/components/PageMeta.jsx';
@@ -23,25 +23,30 @@ const teamMembers = [
   },
 ];
 
-const coreValues = [
+const infoCards = [
   {
-    icon: Lightbulb,
-    title: 'Innovation',
-    description: 'We constantly seek new and better ways to solve problems and create value.',
+    icon: Target,
+    title: "Our Mission",
+    description:
+      "To empower businesses with innovative digital solutions that drive growth, foster engagement, and create lasting value.",
+  },
+  {
+    icon: Eye,
+    title: "Our Vision",
+    description:
+      "To be a leading digital agency recognized for our creativity, strategic thinking, and commitment to client success.",
   },
   {
     icon: Handshake,
-    title: 'Collaboration',
-    description: 'We work closely with our clients and each other to achieve shared goals.',
-  },
-  {
-    icon: Target,
-    title: 'Excellence',
-    description: 'We are committed to delivering the highest quality work and exceeding expectations.',
+    title: "Our Values",
+    description:
+      "We believe in collaboration, integrity, and a passion for excellence in everything we do. Your success is our success.",
   },
 ];
 
 const AboutPage = () => {
+  const imageUrl = "https://res.cloudinary.com/dbk7ixyvd/image/upload/v1754492383/Gemini_Generated_Image_kucbzmkucbzmkucb-min_1_qlxjhv.png";
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
       <PageMeta 
@@ -62,6 +67,11 @@ const AboutPage = () => {
         <section className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div className="animate-slide-in-left delay-300">
             <h2 className="text-4xl font-bold text-gradient-primary mb-6">Our Story & Philosophy</h2>
+            <img 
+              src={imageUrl} 
+              alt="A creative team collaborating on a project" 
+              className="rounded-xl shadow-2xl w-full h-auto object-cover mb-8 transform transition-transform duration-500 hover:scale-105"
+            />
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
               <span className=" font-bold ">
                 Maxbles is a creative agency committed to crafting exceptional
@@ -78,31 +88,20 @@ const AboutPage = () => {
               truly engage your audience.
             </p>
           </div>
-          <div className="animate-slide-in-right delay-400">
-            <Card className="bg-white/80 dark:bg-gray-900/80 p-6 shadow-lg border border-primary/20 dark:border-primary/50">
-              <CardHeader>
-                <CardTitle className="text-3xl font-bold text-primary dark:text-primary-foreground">Our Mission</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lg text-gray-700 dark:text-gray-300">
-                  To empower businesses with innovative digital solutions that drive growth, foster engagement, and create lasting value.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        <section className="mb-20">
-          <h2 className="text-4xl font-bold text-center text-gradient-primary mb-12 animate-fade-in-up delay-500">Our Core Values</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {coreValues.map((value, index) => (
-              <Card key={index} className={`text-center p-6 shadow-lg border border-primary/20 dark:border-primary/50 bg-white/80 dark:bg-gray-900/80 animate-zoom-in delay-${600 + index * 100}`}>
-                <CardHeader className="flex flex-col items-center pb-4">
-                  <value.icon className="h-12 w-12 text-primary mb-4" />
-                  <CardTitle className="text-2xl font-semibold text-gray-800 dark:text-white">{value.title}</CardTitle>
+          <div className="grid grid-cols-1 gap-6 animate-slide-in-right delay-400">
+            {infoCards.map((card, index) => (
+              <Card
+                key={index}
+                className="bg-white/80 dark:bg-gray-900/80 border-l-4 border-primary hover:shadow-lg transition-shadow duration-300 p-4"
+              >
+                <CardHeader className="flex flex-row items-center gap-4 pb-2">
+                  <card.icon className="h-8 w-8 text-primary" />
+                  <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">
+                    {card.title}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="text-gray-600 dark:text-gray-400">
-                  {value.description}
+                  {card.description}
                 </CardContent>
               </Card>
             ))}
@@ -110,10 +109,10 @@ const AboutPage = () => {
         </section>
 
         <section className="mb-20">
-          <h2 className="text-4xl font-bold text-center text-gradient-primary mb-12 animate-fade-in-up delay-800">Meet the Team</h2>
+          <h2 className="text-4xl font-bold text-center text-gradient-primary mb-12 animate-fade-in-up delay-500">Meet the Team</h2>
           <div className="flex flex-wrap justify-center gap-8">
             {teamMembers.map((member, index) => (
-              <div key={index} className={`text-center animate-fade-in-up delay-${900 + index * 100}`}>
+              <div key={index} className={`text-center animate-fade-in-up delay-${600 + index * 100}`}>
                 <img src={member.avatar} alt={member.name} className="h-24 w-24 rounded-full mx-auto mb-4 shadow-md" />
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{member.name}</h3>
                 <p className="text-gray-600 dark:text-gray-400">{member.role}</p>
@@ -122,12 +121,12 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="text-center py-16 mt-20 bg-primary/10 dark:bg-primary/20 rounded-lg shadow-inner animate-fade-in-up delay-1000">
+        <section className="text-center py-16 mt-20 bg-primary/10 dark:bg-primary/20 rounded-lg shadow-inner animate-fade-in-up delay-800">
           <h2 className="text-4xl font-bold text-primary dark:text-primary-foreground mb-6">Our Global Reach</h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-8">
             Maxbles serves clients worldwide, bringing digital excellence to businesses across diverse industries and geographies.
           </p>
-          <Globe className="h-24 w-24 text-primary mx-auto animate-rotate-in delay-1100" />
+          <Globe className="h-24 w-24 text-primary mx-auto animate-rotate-in delay-900" />
         </section>
       </main>
       <Footer />
