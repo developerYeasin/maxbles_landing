@@ -1,5 +1,28 @@
 import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Target, Eye, Handshake } from "lucide-react";
 import { cn } from "@/lib/utils.js";
+
+const infoCards = [
+  {
+    icon: Target,
+    title: "Our Mission",
+    description:
+      "To empower businesses with innovative digital solutions that drive growth, foster engagement, and create lasting value.",
+  },
+  {
+    icon: Eye,
+    title: "Our Vision",
+    description:
+      "To be a leading digital agency recognized for our creativity, strategic thinking, and commitment to client success.",
+  },
+  {
+    icon: Handshake,
+    title: "Our Values",
+    description:
+      "We believe in collaboration, integrity, and a passion for excellence in everything we do. Your success is our success.",
+  },
+];
 
 const AboutSection = ({ className }) => {
   const imageUrl = "https://res.cloudinary.com/dbk7ixyvd/image/upload/v1754492383/Gemini_Generated_Image_kucbzmkucbzmkucb-min_1_qlxjhv.png";
@@ -15,7 +38,12 @@ const AboutSection = ({ className }) => {
         </h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-in-left delay-200">
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+            <img 
+              src={imageUrl} 
+              alt="A creative team collaborating on a project" 
+              className="rounded-xl shadow-2xl w-full h-auto object-cover mb-8 transform transition-transform duration-500 hover:scale-105"
+            />
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
               <span className=" font-bold ">
                 Maxbles is a creative agency committed to crafting exceptional
                 digital solutions.
@@ -24,24 +52,30 @@ const AboutSection = ({ className }) => {
               marketing—helping businesses build a strong online presence and
               achieve measurable growth.
             </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               Our collaborative approach puts your vision at the core of every
               project. With a team of passionate experts, we blend innovative
               thinking and precise execution to deliver digital experiences that
               truly engage your audience.
             </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              At Maxbles, we stay ahead of industry trends and leverage the
-              latest technologies to ensure your brand stands out in an
-              ever-evolving digital landscape.
-            </p>
           </div>
-          <div className="animate-slide-in-right delay-300 flex items-center justify-center">
-            <img 
-              src={imageUrl} 
-              alt="A creative team collaborating on a project" 
-              className="rounded-xl shadow-2xl w-full max-w-md h-auto object-cover transform transition-transform duration-500 hover:scale-105"
-            />
+          <div className="grid grid-cols-1 gap-6 animate-slide-in-right delay-300">
+            {infoCards.map((card, index) => (
+              <Card
+                key={index}
+                className="bg-gray-50/80 dark:bg-gray-900/80 border-l-4 border-primary hover:shadow-lg transition-shadow duration-300"
+              >
+                <CardHeader className="flex flex-row items-center gap-4 pb-2">
+                  <card.icon className="h-8 w-8 text-primary" />
+                  <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">
+                    {card.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-gray-600 dark:text-gray-400">
+                  {card.description}
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
