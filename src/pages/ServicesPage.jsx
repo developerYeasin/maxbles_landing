@@ -138,7 +138,7 @@ const ServicesPage = () => {
           {services.map((service, index) => (
             <Card
               key={index}
-              className={`text-center p-6 shadow-lg border border-primary/20 dark:border-primary/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm hover:shadow-xl hover:border-accent transition-all duration-300 transform hover:-translate-y-2 animate-slide-in-bottom delay-${
+              className={`text-center sm:p-6 shadow-lg border border-primary/20 dark:border-primary/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm hover:shadow-xl hover:border-accent transition-all duration-300 transform hover:-translate-y-2 animate-slide-in-bottom delay-${
                 index * 100
               }`}
             >

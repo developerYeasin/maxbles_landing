@@ -1,11 +1,12 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Lightbulb, Users, Rocket, Award, Globe } from 'lucide-react';
+import { Globe } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import PageMeta from '@/components/PageMeta.jsx';
 
 const AboutPage = () => {
+  const imageUrl = "https://res.cloudinary.com/dbk7ixyvd/image/upload/v1754492383/Gemini_Generated_Image_kucbzmkucbzmkucb-min_1_qlxjhv.png";
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
       <PageMeta 
@@ -27,49 +28,32 @@ const AboutPage = () => {
           <div className="animate-slide-in-left delay-300">
             <h2 className="text-4xl font-bold text-gradient-primary mb-6">Our Story & Philosophy</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-              Founded on the principle of delivering measurable results through creative solutions, Maxbles began with a small team of dedicated professionals. Over the years, we've grown into a full-service agency, but our core philosophy remains the same: **client success is our success.** We believe in transparent communication, collaborative partnerships, and a relentless pursuit of perfection in every project.
+              <span className=" font-bold ">
+                Maxbles is a creative agency committed to crafting exceptional
+                digital solutions.
+              </span>{" "}
+              We specialize in web design, development, branding, and digital
+              marketing—helping businesses build a strong online presence and
+              achieve measurable growth.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              We pride ourselves on our agile approach, adapting to the ever-evolving digital landscape to ensure our clients always stay ahead. From cutting-edge web development to impactful digital marketing campaigns, we craft bespoke strategies that resonate with your audience and drive tangible growth.
+              Our collaborative approach puts your vision at the core of every
+              project. With a team of passionate experts, we blend innovative
+              thinking and precise execution to deliver digital experiences that
+              truly engage your audience.
+            </p>
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              At Maxbles, we stay ahead of industry trends and leverage the
+              latest technologies to ensure your brand stands out in an
+              ever-evolving digital landscape.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <Card className="text-center p-6 shadow-lg border border-primary/20 dark:border-primary/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 animate-scale-in delay-400">
-              <CardHeader className="flex flex-col items-center pb-4">
-                <Lightbulb className="h-12 w-12 text-primary mb-4" />
-                <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">Innovative Ideas</CardTitle>
-              </CardHeader>
-              <CardContent className="text-gray-600 dark:text-gray-400">
-                We foster a culture of creativity, constantly exploring new technologies and approaches to deliver unique and effective solutions.
-              </CardContent>
-            </Card>
-            <Card className="text-center p-6 shadow-lg border border-accent/20 dark:border-accent/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 animate-scale-in delay-500">
-              <CardHeader className="flex flex-col items-center pb-4">
-                <Users className="h-12 w-12 text-accent mb-4" />
-                <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">Expert Team</CardTitle>
-              </CardHeader>
-              <CardContent className="text-gray-600 dark:text-gray-400">
-                Our diverse team of designers, developers, and strategists brings a wealth of experience and passion to every project.
-              </CardContent>
-            </Card>
-            <Card className="text-center p-6 shadow-lg border border-green-500/20 dark:border-green-500/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 animate-scale-in delay-600">
-              <CardHeader className="flex flex-col items-center pb-4">
-                <Rocket className="h-12 w-12 text-green-500 mb-4" />
-                <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">Driven by Results</CardTitle>
-              </CardHeader>
-              <CardContent className="text-gray-600 dark:text-gray-400">
-                We are committed to delivering measurable outcomes that boost your business, ensuring a strong return on investment.
-              </CardContent>
-            </Card>
-            <Card className="text-center p-6 shadow-lg border border-yellow-500/20 dark:border-yellow-500/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 animate-scale-in delay-700">
-              <CardHeader className="flex flex-col items-center pb-4">
-                <Award className="h-12 w-12 text-yellow-500 mb-4" />
-                <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">Quality Focused</CardTitle>
-              </CardHeader>
-              <CardContent className="text-gray-600 dark:text-gray-400">
-                Every project undergoes rigorous quality assurance to ensure it meets the highest standards of performance and design.
-              </CardContent>
-            </Card>
+          <div className="animate-slide-in-right delay-400 flex items-center justify-center">
+            <img 
+              src={imageUrl} 
+              alt="A creative team collaborating on a project" 
+              className="rounded-xl shadow-2xl w-full max-w-md h-auto object-cover transform transition-transform duration-500 hover:scale-105"
+            />
           </div>
         </section>
 

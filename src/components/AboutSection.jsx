@@ -1,9 +1,9 @@
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Lightbulb, Users, Rocket } from "lucide-react";
 import { cn } from "@/lib/utils.js";
 
 const AboutSection = ({ className }) => {
+  const imageUrl = "https://res.cloudinary.com/dbk7ixyvd/image/upload/v1754492383/Gemini_Generated_Image_kucbzmkucbzmkucb-min_1_qlxjhv.png";
+
   return (
     <section
       id="about"
@@ -36,43 +36,12 @@ const AboutSection = ({ className }) => {
               ever-evolving digital landscape.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <Card className="text-center p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-900/80 hover:shadow-lg transition-shadow duration-300 animate-zoom-in delay-300 group transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105">
-              <CardHeader className="flex flex-col items-center pb-4">
-                <Lightbulb className="h-12 w-12 text-blue-500 mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:text-primary" />
-                <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">
-                  Innovative Ideas
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-gray-600 dark:text-gray-400">
-                We bring fresh perspectives and creative solutions to every
-                project, pushing boundaries to deliver unique outcomes.
-              </CardContent>
-            </Card>
-            <Card className="text-center p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-900/80 hover:shadow-lg transition-shadow duration-300 animate-zoom-in delay-400 group transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105">
-              <CardHeader className="flex flex-col items-center pb-4">
-                <Users className="h-12 w-12 text-pink-500 mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:text-accent" />
-                <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">
-                  Expert Team
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-gray-600 dark:text-gray-400">
-                Our professionals are dedicated to excellence and client
-                satisfaction, with years of experience in the digital realm.
-              </CardContent>
-            </Card>
-            <Card className="text-center p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-900/80 hover:shadow-lg transition-shadow duration-300 animate-zoom-in delay-500 group transform-gpu perspective-[1000px] hover:rotate-x-[3deg] hover:rotate-y-[3deg] hover:scale-105">
-              <CardHeader className="flex flex-col items-center pb-4">
-                <Rocket className="h-12 w-12 text-green-500 mb-4 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:text-green-600" />
-                <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">
-                  Driven by Results
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-gray-600 dark:text-gray-400">
-                We focus on delivering measurable outcomes that boost your
-                business, ensuring a strong return on investment.
-              </CardContent>
-            </Card>
+          <div className="animate-slide-in-right delay-300 flex items-center justify-center">
+            <img 
+              src={imageUrl} 
+              alt="A creative team collaborating on a project" 
+              className="rounded-xl shadow-2xl w-full max-w-md h-auto object-cover transform transition-transform duration-500 hover:scale-105"
+            />
           </div>
         </div>
       </div>

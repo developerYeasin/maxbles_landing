@@ -63,7 +63,7 @@ const TestimonialsPage = () => {
           {testimonials.length > 0 ? (
             testimonials.map((testimonial, index) => (
               <Card key={testimonial.id || index} className={`p-4 md:p-6 shadow-lg border border-primary/20 dark:border-primary/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm flex flex-col items-center text-center animate-slide-in-bottom delay-${index * 100}`}>
-                <CardContent className="flex flex-col items-center">
+                <CardContent className="sm:px-6 px-0 sm:py-6 py-6 flex flex-col items-center">
                   <Avatar className="h-20 w-20 md:h-24 md:w-24 mb-4 border-4 border-primary shadow-md">
                     <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
                     <AvatarFallback className="bg-primary/20 text-primary text-2xl font-bold">{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
