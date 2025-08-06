@@ -70,7 +70,7 @@ const AboutSection = ({ className }) => {
               <Card
                 key={index}
                 className={cn(
-                  "text-center p-6 bg-white dark:bg-gray-900 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 transform hover:-translate-y-1",
+                  "text-center sm:px-4 px-2 py-3 bg-white dark:bg-gray-900 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-t-4 transform hover:-translate-y-1",
                   card.borderColor
                 )}
               >

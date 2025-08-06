@@ -8,19 +8,19 @@ import { cn } from '@/lib/utils.js';
 
 const teamMembers = [
   {
-    name: 'John Doe',
-    role: 'Founder & CEO',
-    avatar: 'https://placehold.co/100x100/e2e8f0/4a5568?text=JD',
+    name: 'Jihad Kazi',
+    role: 'Digital Marketing Expert',
+    avatar: 'https://res.cloudinary.com/dbk7ixyvd/image/upload/v1754408343/uploads/e4dbj8htb3tbrhpucrqb.jpg',
   },
   {
-    name: 'Jane Smith',
-    role: 'Lead Designer',
-    avatar: 'https://placehold.co/100x100/e2e8f0/4a5568?text=JS',
+    name: 'Shagor Hossain',
+    role: 'Web Developer and Graphics Designer',
+    avatar: 'https://res.cloudinary.com/dbk7ixyvd/image/upload/v1754494527/488549770_4371925009746608_8812529751240972822_n_iroby8.jpg',
   },
   {
-    name: 'Peter Jones',
-    role: 'Lead Developer',
-    avatar: 'https://placehold.co/100x100/e2e8f0/4a5568?text=PJ',
+    name: 'Yeasin',
+    role: 'Full Stack Developer',
+    avatar: 'https://res.cloudinary.com/dbk7ixyvd/image/upload/v1754494438/YA_1-1-02-removebg_ohj762.png',
   },
 ];
 
@@ -123,7 +123,7 @@ const AboutPage = () => {
           <div className="flex flex-wrap justify-center gap-8">
             {teamMembers.map((member, index) => (
               <div key={index} className={`text-center animate-fade-in-up delay-${600 + index * 100}`}>
-                <img src={member.avatar} alt={member.name} className="h-24 w-24 rounded-full mx-auto mb-4 shadow-md" />
+                <img src={member.avatar} alt={member.name} className="h-24 w-24 rounded-full mx-auto mb-4 shadow-md object-cover" />
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{member.name}</h3>
                 <p className="text-gray-600 dark:text-gray-400">{member.role}</p>
               </div>
