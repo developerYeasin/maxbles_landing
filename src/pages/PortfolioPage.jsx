@@ -52,7 +52,7 @@ const PortfolioPage = () => {
       <Header />
       <main className="flex-grow container mx-auto py-12 md:py-20">
         <section className="text-center mb-12 md:mb-16">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gradient-primary mb-6 animate-fade-in-up">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gradient-primary mb-6 animate-fade-in-up break-words">
             Our Creative Showcase
           </h1>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">

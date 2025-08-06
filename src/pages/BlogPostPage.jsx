@@ -95,7 +95,7 @@ const BlogPostPage = () => {
           <div className="mb-8 rounded-lg overflow-hidden">
             <img src={post.image} alt={post.title} className="w-full h-auto" />
           </div>
-          <h1 className="text-3xl md:text-4xl font-extrabold text-gradient-primary mb-4 leading-tight">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-gradient-primary mb-4 leading-tight break-words">
             {post.title}
           </h1>
           <p className="text-gray-600 dark:text-gray-400 text-md mb-6">
