@@ -102,7 +102,7 @@ const Header = () => {
             </GradientButton>
           </Link>
         </div>
-        <div className="md:hidden animate-slide-in-right">
+        <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="text-gray-700 dark:text-gray-300">
@@ -110,7 +110,7 @@ const Header = () => {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-white dark:bg-gray-950">
+            <SheetContent side="right" className="bg-white dark:bg-gray-950 w-[80vw] max-w-sm">
               <nav className="flex flex-col space-y-4 pt-6 text-lg font-medium text-gray-700 dark:text-gray-300">
                 <Link to="/" className="hover:text-primary dark:hover:text-primary-foreground">Home</Link>
                 <Link to="/about" className="hover:text-primary dark:hover:text-primary-foreground">About</Link>
