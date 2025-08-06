@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Target, Eye, Handshake } from "lucide-react";
 import { cn } from "@/lib/utils.js";
 
@@ -63,17 +63,19 @@ const AboutSection = ({ className }) => {
             {infoCards.map((card, index) => (
               <Card
                 key={index}
-                className="bg-gray-50/80 dark:bg-gray-900/80 border-l-4 border-primary hover:shadow-lg transition-shadow duration-300"
+                className="bg-gray-50/80 dark:bg-gray-900/80 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg hover:border-primary transition-all duration-300"
               >
-                <CardHeader className="flex flex-row items-center gap-4 pb-2">
-                  <card.icon className="h-8 w-8 text-primary" />
-                  <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">
-                    {card.title}
-                  </CardTitle>
+                <CardHeader className="flex flex-row items-start gap-4">
+                  <card.icon className="h-8 w-8 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+                      {card.title}
+                    </CardTitle>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      {card.description}
+                    </p>
+                  </div>
                 </CardHeader>
-                <CardContent className="text-gray-600 dark:text-gray-400">
-                  {card.description}
-                </CardContent>
               </Card>
             ))}
           </div>
