@@ -66,15 +66,15 @@ const PortfolioSection = ({ className }) => {
                     <img src={item.image} alt={item.title} className="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-primary/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
                       <div className="text-white text-center p-4">
-                        <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
+                        <h3 className="text-xl font-semibold mb-1 break-words">{item.title}</h3>
                         <p className="text-sm mb-2">{item.category}</p>
-                        <div className="text-xs opacity-80 hidden group-hover:block transition-opacity duration-300" dangerouslySetInnerHTML={{ __html: truncateText(item.description, 120) }}></div>
+                        <div className="text-xs opacity-80 hidden group-hover:block transition-opacity duration-300 break-words" dangerouslySetInnerHTML={{ __html: truncateText(item.description, 120) }}></div>
                       </div>
                     </div>
                   </div>
                 </Link>
                 <CardContent className="p-4 flex-grow">
-                  <h3 className="text-lg font-semibold text-gray-800 dark:text-white">{item.title}</h3>
+                  <h3 className="text-lg font-semibold text-gray-800 dark:text-white break-words">{item.title}</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{item.category}</p>
                 </CardContent>
               </Card>

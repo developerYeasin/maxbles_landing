@@ -69,10 +69,10 @@ const PortfolioPage = () => {
                     <img src={item.image} alt={item.title} className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-primary/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
                       <div className="text-white text-center p-4">
-                        <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
+                        <h3 className="text-2xl font-bold mb-2 break-words">{item.title}</h3>
                         <p className="text-sm mb-3 opacity-90">{item.category}</p>
                         {/* Render description as HTML */}
-                        <div className="text-base opacity-90 mb-4" dangerouslySetInnerHTML={{ __html: truncateText(item.description, 120) }}></div>
+                        <div className="text-base opacity-90 mb-4 break-words" dangerouslySetInnerHTML={{ __html: truncateText(item.description, 120) }}></div>
                         <div className="flex flex-wrap justify-center gap-2">
                           {item.tags && item.tags.map((tag, tagIndex) => (
                             <span key={tagIndex} className="bg-white text-primary text-xs px-3 py-1 rounded-full font-medium">
@@ -85,7 +85,7 @@ const PortfolioPage = () => {
                   </div>
                 </Link>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{item.title}</h3>
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-white break-words">{item.title}</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{item.category}</p>
                 </CardContent>
               </Card>

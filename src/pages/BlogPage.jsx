@@ -68,14 +68,14 @@ const BlogPage = () => {
                 <Card className={`overflow-hidden shadow-lg border border-primary/20 dark:border-primary/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm group-hover:shadow-xl transition-shadow duration-300 animate-slide-in-bottom delay-${index * 100} h-full flex flex-col`}>
                   <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white">{post.title}</CardTitle>
+                    <CardTitle className="text-xl font-semibold text-gray-800 dark:text-white break-words">{post.title}</CardTitle>
                     <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center justify-between">
                       <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                       <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{post.readTime}</span>
                     </p>
                   </CardHeader>
                   <CardContent className="flex flex-col flex-grow">
-                    <div className="text-gray-600 dark:text-gray-300 mb-4 flex-grow" dangerouslySetInnerHTML={{ __html: truncateText(post.excerpt, 120) }}></div>
+                    <div className="text-gray-600 dark:text-gray-300 mb-4 flex-grow break-words" dangerouslySetInnerHTML={{ __html: truncateText(post.excerpt, 120) }}></div>
                     <div className="flex justify-between items-center mt-auto">
                       <span className="text-sm text-gray-600 dark:text-gray-400">By {post.author}</span>
                       <Button variant="link" className="p-0 h-auto text-primary group-hover:text-accent dark:text-primary-foreground dark:group-hover:text-accent-foreground">Read More</Button>
