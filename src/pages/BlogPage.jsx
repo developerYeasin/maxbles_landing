@@ -51,12 +51,12 @@ const BlogPage = () => {
         description="Stay informed with the latest trends, expert advice, and insights from the Maxbles blog on web design, digital marketing, and technology." 
       />
       <Header />
-      <main className="flex-grow container mx-auto py-20">
-        <section className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-gradient-primary mb-6 animate-fade-in-up">
+      <main className="flex-grow container mx-auto py-12 md:py-20">
+        <section className="text-center mb-12 md:mb-16">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-gradient-primary mb-6 animate-fade-in-up">
             Insights from the Maxbles Blog
           </h1>
-          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">
             Stay informed with the latest trends, expert advice, and thought leadership in web design, digital marketing, and technology. Our blog is your go-to resource for digital excellence.
           </p>
         </section>

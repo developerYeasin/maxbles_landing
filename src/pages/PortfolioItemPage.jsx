@@ -115,15 +115,15 @@ const PortfolioItemPage = () => {
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
       <PageMeta title={item.title} description={metaDescription} />
       <Header />
-      <main className="flex-grow container mx-auto sm:py-20 py-4 ">
-        <article className="w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm sm:p-8 p-4 md:p-12 rounded-lg shadow-lg border border-primary/20 dark:border-primary/50 animate-fade-in-up">
+      <main className="flex-grow container mx-auto py-12 md:py-20">
+        <article className="w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-6 sm:p-8 md:p-12 rounded-lg shadow-lg border border-primary/20 dark:border-primary/50 animate-fade-in-up">
           <div className="mb-8 rounded-lg overflow-hidden">
             <img src={item.image} alt={item.title} className="w-full h-auto" />
           </div>
-          <h1 className="sm:text-2xl text-xl md:text-4xl font-extrabold text-gradient-primary mb-4 leading-tight">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-gradient-primary mb-4 leading-tight">
             {item.title}
           </h1>
-          <p className="text-gray-600 dark:text-gray-400 text-md mb-6">
+          <p className="text-gray-600 dark:text-gray-400 text-base mb-6">
             Category:{" "}
             <span className="font-semibold text-primary dark:text-primary-foreground">
               {item.category}
@@ -132,13 +132,13 @@ const PortfolioItemPage = () => {
 
           {formattedDescription && (
             <div
-              className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed text-lg mb-8"
+              className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed text-base sm:text-lg mb-8"
               dangerouslySetInnerHTML={{ __html: formattedDescription }}
             ></div>
           )}
 
           {fullContentHtml && (
-            <div className="mt-8 prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+            <div className="mt-8 prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
               <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
                 Project Details
               </h2>
@@ -209,13 +209,11 @@ const PortfolioItemPage = () => {
               <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">
                 Live Website Preview:
               </h3>
-              <div className="relative w-full sm:h-auto h-[80vh] pt-[100%] md:pt-[75%] lg:pt-[56.25%] rounded-lg overflow-hidden shadow-xl border border-primary/30 dark:border-primary/60">
-                {" "}
-                {/* Responsive Aspect Ratio */}
+              <div className="relative w-full pt-[100%] md:pt-[75%] lg:pt-[56.25%] rounded-lg overflow-hidden shadow-xl border border-primary/30 dark:border-primary/60">
                 <iframe
                   src={item.live_url}
                   title={`${item.title} Live Preview`}
-                  className="absolute top-0 left-0 w-full sm:h-full h-[80vh] border-0 rounded-lg"
+                  className="absolute top-0 left-0 w-full h-full border-0 rounded-lg"
                   allowFullScreen
                 ></iframe>
               </div>

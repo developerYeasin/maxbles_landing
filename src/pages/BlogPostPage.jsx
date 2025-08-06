@@ -90,12 +90,12 @@ const BlogPostPage = () => {
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-950">
       <PageMeta title={post.title} description={metaDescription} />
       <Header />
-      <main className="flex-grow container mx-auto sm:py-20 py-4 ">
-        <article className="w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-4 sm:p-8 md:p-12 rounded-lg shadow-lg border border-primary/20 dark:border-primary/50 animate-fade-in-up">
+      <main className="flex-grow container mx-auto py-12 md:py-20">
+        <article className="w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm p-6 sm:p-8 md:p-12 rounded-lg shadow-lg border border-primary/20 dark:border-primary/50 animate-fade-in-up">
           <div className="mb-8 rounded-lg overflow-hidden">
             <img src={post.image} alt={post.title} className="w-full h-auto" />
           </div>
-          <h1 className="sm:text-2xl text-xl md:text-4xl font-extrabold text-gradient-primary mb-4 leading-tight">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-gradient-primary mb-4 leading-tight">
             {post.title}
           </h1>
           <p className="text-gray-600 dark:text-gray-400 text-md mb-6">
@@ -112,7 +112,7 @@ const BlogPostPage = () => {
             &bull; {post.readTime}
           </p>
           <div
-            className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed text-lg"
+            className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 leading-relaxed text-base sm:text-lg"
             dangerouslySetInnerHTML={{ __html: post.content }}
           ></div>
           <div className="mt-10 text-center">

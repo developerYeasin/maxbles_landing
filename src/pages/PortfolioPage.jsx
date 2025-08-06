@@ -50,17 +50,17 @@ const PortfolioPage = () => {
         description="Browse our creative showcase of recent projects. See how Maxbles delivers innovation and success through expert design and development." 
       />
       <Header />
-      <main className="flex-grow container mx-auto py-20">
-        <section className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-gradient-primary mb-6 animate-fade-in-up">
+      <main className="flex-grow container mx-auto py-12 md:py-20">
+        <section className="text-center mb-12 md:mb-16">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-gradient-primary mb-6 animate-fade-in-up">
             Our Creative Showcase
           </h1>
-          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto animate-fade-in-up delay-200">
             Explore a selection of our recent projects that highlight our expertise in design, development, and digital strategy. Each project is a testament to our commitment to innovation and client success.
           </p>
         </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {portfolioItems.length > 0 ? (
             portfolioItems.map((item, index) => (
               <Card key={item.id || index} className={`overflow-hidden shadow-lg border border-primary/20 dark:border-primary/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm group animate-scale-in delay-${index * 100}`}>
