@@ -59,13 +59,13 @@ const TestimonialsSection = ({ className }) => {
             slideClassName="w-full sm:w-1/2 lg:w-1/3 flex" // Added flex to slideClassName to make cards fill height
           >
             {testimonials.map((testimonial, index) => (
-              <Card key={testimonial.id || index} className={`p-4 md:p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-900/80 flex flex-col items-center text-center animate-zoom-in delay-${index * 100} hover:shadow-xl hover:border-accent transition-all duration-300 transform hover:-translate-y-1 h-full`}>
-                <CardContent className="flex flex-col items-center flex-grow">
+              <Card key={testimonial.id || index} className={`p-0 md:p-6 shadow-md border border-gray-200 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-900/80 flex flex-col items-center text-center animate-zoom-in delay-${index * 100} hover:shadow-xl hover:border-accent transition-all duration-300 transform hover:-translate-y-1 h-full`}>
+                <CardContent className=" sm:px-6 px-4 sm:py-6 py-6 flex flex-col items-center flex-grow">
                   <Avatar className="h-16 w-16 md:h-20 md:w-20 mb-4 border-2 border-blue-500 transition-all duration-300 group-hover:scale-105 group-hover:border-accent">
                     <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
                     <AvatarFallback className="bg-blue-100 text-blue-600">{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                   </Avatar>
-                  <div className="text-base md:text-lg italic text-gray-700 dark:text-gray-300 mb-4" dangerouslySetInnerHTML={{ __html: testimonial.quote }}></div>
+                  <div className="text-sm md:text-lg italic text-gray-700 dark:text-gray-300 mb-4" dangerouslySetInnerHTML={{ __html: testimonial.quote }}></div>
                   <p className="font-semibold text-gray-800 dark:text-white text-base">{testimonial.name}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.title}</p>
                 </CardContent>
